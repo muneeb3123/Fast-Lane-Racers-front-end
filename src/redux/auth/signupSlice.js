@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
-
+// eslint-disable-next-line import/no-extraneous-dependencies
 const initialState = {
   user: null,
   error: null,
