@@ -1,9 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import facebook from '../images/facebook.svg';
-import twitter from '../images/twitter.svg';
-import instagram from '../images/instagram.svg';
+import './Card.css'
 
 const CardCar = ({ name, description, image, color }) => {
   const backColor = {
@@ -12,22 +10,26 @@ const CardCar = ({ name, description, image, color }) => {
   
 return (
   <section className='card-container'>
+    <div className='image'>
     <Link href='/' className='circle-image' style={backColor}>
-      <img src={`../images/${image}`} alt={name} className='image-over' />
+      <img src={`./images/${image}`} alt={name} className='image-over' />
     </Link>
+    </div>
+    <div className='details'>
     <h2>{name}</h2>
     <hr className='line-doted' />
-    <p>{description}</p>
+    <p className='description'>{description}</p>
     <div className='social-buttons'>
       <a href='www.facebook.com' className='social-button' target="_blank" rel="noopener noreferrer">
-        <img src={facebook} alt='facebook logo'/>
+        <img src='./images/facebook.svg' alt='facebook logo'/>
       </a>
       <a href='www.teitter.com' className='social-button' target="_blank" rel="noopener noreferrer">
-        <img src={twitter} alt='twitter logo'/>
+        <img src='./images/twitter.svg' alt='twitter logo'/>
       </a>
       <a href='www.instagram.com' className='social-button' target="_blank" rel="noopener noreferrer">
-        <img src={instagram} alt='instagram logo'/>
+        <img src='./images/instagram.svg' alt='instagram logo'/>
       </a>
+      </div>
     </div>
   </section>
 )}
