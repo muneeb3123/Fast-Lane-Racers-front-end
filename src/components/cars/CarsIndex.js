@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { fetchAllCars } from '../../redux/cars/CarsIndexSlice';
 
 export default function CarsIndex() {
@@ -10,15 +11,20 @@ export default function CarsIndex() {
   }, [dispatch]);
 
   const displayAllCarsArray = useSelector((store) => (store.allCarsReducer.allCarsArray));
-  console.log(displayAllCarsArray);
 
   return (
     <>
       <div>CarsIndex</div>
       {displayAllCarsArray.map((car) => (
-        <div key={car.id}>
+        <Link
+          to={`/cars/${car.id}`}
+          key={car.id}
+          state={{
+            carID: car.id,
+          }}
+        >
           {car.name}
-        </div>
+        </Link>
       ))}
     </>
   );
