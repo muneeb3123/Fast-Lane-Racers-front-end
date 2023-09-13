@@ -18,7 +18,7 @@ return (
     <div className='details'>
     <h2>{name}</h2>
     <hr className='line-doted' />
-    <p className='description'>{description}</p>
+    <p className='description' style={{overflowWrap: "break-word", width: "70%"}}>{description}</p>
     <div className='social-buttons'>
       <a href='www.facebook.com' className='social-button' target="_blank" rel="noopener noreferrer">
         <img src='./images/facebook.svg' alt='facebook logo'/>
