@@ -7,6 +7,7 @@ import Login from './components/auth/Login';
 import SignUp from './components/auth/SignUp';
 import Home from './components/home/Home';
 import { currentUser } from './redux/auth/currentUserSlice';
+import CarsIndex from './components/cars/CarsIndex';
 
 function App() {
   const dispatch = useDispatch();
@@ -20,6 +21,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/cars" element={<CarsIndex />} />
       </Routes>
     </BrowserRouter>
   );
