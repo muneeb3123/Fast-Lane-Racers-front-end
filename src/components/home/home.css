@@ -1,16 +1,16 @@
 .main {
-    display: grid;
-    place-items: center;
-    min-height: 100vh;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
 }
 
 .logged-in {
-    display: flex;
-    flex-direction: column-reverse;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 .not-user {
-    display: flex;
-    flex-direction: column-reverse;
-    gap: 10px;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 10px;
 }
