@@ -1,0 +1,52 @@
+{
+  "search": [
+    {
+      "id": "ferrari1",
+      "item1": "Ferrari 1",
+      "name": "Ferrari 1",
+      "image": "ferrari1.png",
+      "description": "Description for Ferrari 1",
+      "color": "color1"
+    },
+    {
+      "id": "ferrari2",
+      "item1": "Ferrari 2",
+      "name": "Ferrari 2",
+      "image": "ferrari2.png",
+      "description": "Description for Ferrari 2",
+      "color": "color2"
+    },
+    {
+      "id": "ferrari3",
+      "item1": "Ferrari 3",
+      "name": "Ferrari 3",
+      "image": "ferrari3.png",
+      "description": "Description for Ferrari 3",
+      "color": "color3"
+    },
+    {
+      "id": "ferrari4",
+      "item1": "Ferrari 4",
+      "name": "Ferrari 4",
+      "image": "ferrari1.png",
+      "description": "Description for Ferrari 4",
+      "color": "color4"
+    },
+    {
+      "id": "ferrari5",
+      "item1": "Ferrari 5",
+      "name": "Ferrari 5",
+      "image": "ferrari2.png",
+      "description": "Description for Ferrari 5",
+      "color": "color5"
+    },
+    {
+      "id": "ferrari6",
+      "item1": "Ferrari 6",
+      "name": "Ferrari 6",
+      "image": "ferrari3.png",
+      "description": "Description for Ferrari 6",
+      "color": "color6"
+    }
+  ]
+}
