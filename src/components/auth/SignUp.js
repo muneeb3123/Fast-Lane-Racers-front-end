@@ -13,6 +13,7 @@ function SignUp() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { isUser } = useSelector((state) => state.currentUser);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (isUser) {
@@ -29,6 +30,7 @@ function SignUp() {
       password,
       password_confirmation: passwordConfirmation,
     };
+    setLoading(true);
     try {
       const response = await axios.post('http://127.0.0.1:3000/signup', {
         user: formData,
@@ -37,19 +39,27 @@ function SignUp() {
       localStorage.setItem('token', response.headers.authorization);
       dispatch(currentUser());
     } catch (error) {
-      toast.error(error.response.data.errors[0]);
+      if (error.response && error.response.data && error.response.data.errors) {
+        toast.error(error.response.data.errors[0]);
+      } else {
+        toast.error('An error occurred');
+      }
     }
+    setLoading(false);
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h1>{isUser}</h1>
-      <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-      <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
-      <input type="password" placeholder="Password Confirmation" value={passwordConfirmation} onChange={(e) => setPasswordConfirmation(e.target.value)} />
-      <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
-      <button type="submit">Register</button>
-    </form>
+    <div className="login-bg">
+      {loading && <p>Loading...</p>}
+      <form onSubmit={handleSubmit}>
+        <h1>{isUser}</h1>
+        <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+        <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
+        <input type="password" placeholder="Password Confirmation" value={passwordConfirmation} onChange={(e) => setPasswordConfirmation(e.target.value)} />
+        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+        <button type="submit">Register</button>
+      </form>
+    </div>
   );
 }
 
