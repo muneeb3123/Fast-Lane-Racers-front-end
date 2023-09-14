@@ -3,3 +3,67 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* Login and Sign-up styles */
+
+/* Background image for login and signup pages */
+.login-bg {
+  background-image: url('../src/images/background\ image.png'); 
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Input fields */
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  margin: 10px 0;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+/* Submit button */
+button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* Center the form on the page */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+/* Error message styles */
+.toast-error {
+  background-color: #ff6b6b;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Success message styles */
+.toast-success {
+  background-color: #66bb6a;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-align: center;
+  font-weight: bold;
+}

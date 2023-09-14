@@ -12,14 +12,14 @@ export const currentUser = createAsyncThunk('current/fetch', async () => {
     });
     return response.data.user;
   } catch (error) {
-    throw error.data.message;
+    throw error.response.data.message; // Change to error.response.data.message
   }
 });
 
 const initialState = {
   user: null,
   isUser: false,
-  isLoadig: false,
+  isLoading: false,
   error: null,
 };
 
@@ -33,7 +33,7 @@ const currentUserSlice = createSlice({
         ...state,
         user: null,
         isUser: false,
-        isLoadig: true,
+        isLoading: true,
         error: null,
       }))
       .addCase(currentUser.fulfilled, (state, action) => ({
@@ -41,14 +41,14 @@ const currentUserSlice = createSlice({
         user: action.payload,
         isUser: true,
         error: null,
-        isLoadig: false,
+        isLoading: false,
       }))
       .addCase(currentUser.rejected, (state, action) => ({
         ...state,
         user: null,
         isUser: false,
-        error: action.error,
-        isLoadig: false,
+        error: action.error.message, // Access error message
+        isLoading: false,
       }));
   },
 });
