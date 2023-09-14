@@ -1,17 +1,23 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Reservation1 from './component/cards/Reservation1';
-import Reservation from './component/cards/Reservation'
+import Reservation from './component/cards/Reservation';
+import Layout from './component/layout/Layout';
+import Home from './component/Home';
 
-function App() {
+
+function App() {  
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
-        <Route path="/reservation" element={<Reservation />} />
-        <Route path="/reservation1" element={<Reservation1 />} /> 
+        <Route path="/" element={<Layout />} >
+          <Route index element={<Home />} />
+          <Route path="/reservation" element={<Reservation />} />
+          <Route path="/reservation1" element={<Reservation1 />} /> 
+        </Route>
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
 
