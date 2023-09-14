@@ -3,14 +3,15 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 /* Login and Sign-up styles */
 
 /* Background image for login and signup pages */
 .login-bg {
-  background-image: url('../src/images/background\ image.png'); 
+  background-image: url('../src/images/background\ image.png');
   background-size: cover;
   background-position: center;
-  min-height: 100vh; 
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
