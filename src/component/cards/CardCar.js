@@ -23,7 +23,7 @@ return (
       <a href='www.facebook.com' className='social-button' target="_blank" rel="noopener noreferrer">
         <img src='./images/facebook.svg' alt='facebook logo'/>
       </a>
-      <a href='www.teitter.com' className='social-button' target="_blank" rel="noopener noreferrer">
+      <a href='www.twitter.com' className='social-button' target="_blank" rel="noopener noreferrer">
         <img src='./images/twitter.svg' alt='twitter logo'/>
       </a>
       <a href='www.instagram.com' className='social-button' target="_blank" rel="noopener noreferrer">
