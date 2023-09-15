@@ -1,0 +1,117 @@
+.car-show-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+  padding: 40px 5%;
+}
+
+.car-image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.car-image {
+  width: 90%;
+  height: 90%;
+}
+
+.car-details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  width: 100%;
+}
+
+.car-name-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.car-name {
+  font-size: 70px;
+}
+
+.purchase-details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+}
+
+.finance-fee-container,
+.option-to-purchase-fee-container,
+.total-amount-payable-container,
+.duration-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  font-size: 25px;
+  line-height: 50px;
+  padding: 0 20px;
+}
+
+.finance-fee-container,
+.total-amount-payable-container {
+  background-color: #e2e3e5;
+}
+
+.apr-percentage-container {
+  font-size: 30px;
+}
+
+.doughnut-chart-container {
+  width: 170px;
+  height: 170px;
+}
+
+.reserve-btn {
+  height: 60px;
+  width: 200px;
+  font-size: 25px;
+  border: 1px solid rgb(24, 160, 24);
+  border-radius: 50px;
+  background-color: rgb(14, 168, 14);
+  color: white;
+}
+
+/* ==================== Desktop Version ======================== */
+
+@media (min-width: 768px) {
+  .car-show-container {
+    display: grid;
+    grid-template-columns: 63% 35%;
+    align-items: center;
+    justify-content: center;
+    gap: 2%;
+  }
+
+  .car-image-container {
+    align-items: flex-start;
+  }
+
+  .car-details-container {
+    align-items: flex-end;
+
+    /* border: 1px solid red; */
+  }
+
+  .car-name-container {
+    align-items: flex-end;
+  }
+
+  .purchase-details-container {
+    width: 100%;
+  }
+}
