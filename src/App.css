@@ -1,9 +1,27 @@
+:root {
+  --color1: #d1eae7;
+  --color2: #5973b5;
+  --color3: #efefef;
+  --color4: #b17373;
+  --color5: #45a453;
+  --color6: #927842;
+}
+
+@font-face {
+  font-family: 'racer';
+  src: url(./assets/fonts/racer.woff2) format('woff2');
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+body {
+  font-family: 'racer', sans-serif;
+  font-size: 16px;
+  font-weight: 200;
 /* Login and Sign-up styles */
 
 /* Background image for login and signup pages */

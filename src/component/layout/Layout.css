@@ -1,0 +1,93 @@
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 10rem;
+  background-color: #ffe;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25em;
+  transition: all 0.5s ease-in-out;
+}
+
+.principal {
+  margin-left: 10rem;
+
+  /* padding: 1.5rem; */
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  transition: all 0.3s ease;
+  padding: 0.312em;
+}
+
+li:hover {
+  background-color: #d2c7c760;
+  border-radius: 0.312em;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+    font-size: 14px;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .principal {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+
+  .menu-icon {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 15;
+    border: none;
+    background-color: transparent;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .menu-icon:hover {
+    transform: scale(1.1);
+
+    /* transform: rotate(90deg); */
+  }
+
+  .activate {
+    animation-duration: 1s;
+    animation-name: slidein;
+    display: flex;
+    z-index: 14;
+  }
+
+  @keyframes slidein {
+    from {
+      margin-right: 100%;
+      width: 0%;
+    }
+
+    to {
+      margin-right: 0%;
+      width: 10rem;
+    }
+  }
+}
