@@ -7,8 +7,9 @@ import Login from './components/auth/Login';
 import SignUp from './components/auth/SignUp';
 import Home from './components/home/Home';
 import { currentUser } from './redux/auth/currentUserSlice';
-import CarsIndex from './components/cars/CarsIndex';
+import CarsIndex from './component/cars/CarIndex';
 import CarShow from './components/cars/CarShow';
+import Layout from './component/layout/Layout';
 
 function App() {
   const dispatch = useDispatch();
@@ -19,11 +20,13 @@ function App() {
     <BrowserRouter>
       <Toaster position="top-center" duration="4000" />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/cars" element={<CarsIndex />} />
-        <Route path="/cars/:id" element={<CarShow />} />
+        <Route path="/" element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/cars" element={<CarsIndex />} />
+          <Route path="/cars/:id" element={<CarShow />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
