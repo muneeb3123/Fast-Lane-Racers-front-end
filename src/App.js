@@ -7,8 +7,8 @@ import Login from './components/auth/Login';
 import SignUp from './components/auth/SignUp';
 import Home from './components/home/Home';
 import { currentUser } from './redux/auth/currentUserSlice';
-import CarsIndex from './component/cars/CarIndex';
-import CarShow from './components/cars/CarShow';
+import CarsIndex from './component/cars/CarIndex/CarIndex';
+import CarShow from './component/cars/CarShow/CarShow';
 import Layout from './component/layout/Layout';
 
 function App() {

@@ -5,7 +5,7 @@ import {
   Chart, Title, ArcElement, Legend,
 } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
-import { fetchSpecificCar } from '../../redux/cars/CarShowSlice';
+import { fetchSpecificCar } from '../../../redux/cars/CarShowSlice';
 import './CarShow.css';
 
 Chart.register(

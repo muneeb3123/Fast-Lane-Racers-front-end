@@ -8,7 +8,7 @@ import {
 import { Swiper, SwiperSlide } from 'swiper/react';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchAllCars } from '../../redux/cars/CarsIndexSlice';
+import { fetchAllCars } from '../../../redux/cars/CarsIndexSlice';
 // import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
 import './CarsIndex.css';
