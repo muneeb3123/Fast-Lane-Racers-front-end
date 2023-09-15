@@ -11,14 +11,14 @@ const CardCar = ({ name, description, image, color }) => {
 return (
   <section className='card-container'>
     <div className='image'>
-    <Link href='/' className='circle-image' style={backColor}>
-      <img src={`./images/${image}`} alt={name} className='image-over' />
-    </Link>
+      <Link to={`/details/${name}`} className='circle-image' style={backColor}>
+        <img src={`./images/${image}`} alt={name} className='image-over' />
+      </Link>
     </div>
     <div className='details'>
     <h2>{name}</h2>
     <hr className='line-doted' />
-    <p className='description' style={{overflowWrap: "break-word", width: "70%"}}>{description}</p>
+    <p className='description' >{description}</p>
     <div className='social-buttons'>
       <a href='www.facebook.com' className='social-button' target="_blank" rel="noopener noreferrer">
         <img src='./images/facebook.svg' alt='facebook logo'/>

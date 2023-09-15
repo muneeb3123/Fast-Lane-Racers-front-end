@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Reservation1 from './component/cards/Reservation1';
-import Reservation from './component/cards/Reservation';
+import Reservation1 from './component/cars/CarIndex';
+// import Reservation from './component/cards/Reservation';
 import Layout from './component/layout/Layout';
 import Home from './component/Home';
+import Details from './component/details/Details';
 
 
 function App() {  
@@ -13,8 +14,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />} >
           <Route index element={<Home />} />
-          <Route path="/reservation" element={<Reservation />} />
-          <Route path="/reservation1" element={<Reservation1 />} /> 
+          
+          <Route path="/reservation1" element={<Reservation1 />} />
+          <Route path="/details/:name" element={<Details />} />
         </Route>
       </Routes>
     </BrowserRouter>
