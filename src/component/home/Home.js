@@ -1,67 +1,45 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router';
-import { toast } from 'react-hot-toast';
-import { logOut } from '../../redux/auth/logoutSlice';
+import React, { useEffect } from 'react';
 import './home.css';
 
 function Home() {
-  const { user, isUser, isLoading } = useSelector((state) => state.currentUser);
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
+  useEffect(() => {
+    const handleAnimationIteration = (event) => {
+      const animatedElement = event.target;
+      const isPaused = animatedElement.dataset.paused === 'true';
 
-  const handleLogIn = (e) => {
-    e.preventDefault();
-    navigate('/login');
-  };
+      if (!isPaused) {
+        animatedElement.style.animationPlayState = 'paused';
 
-  const handleLogOut = (e) => {
-    e.preventDefault();
-    dispatch(logOut()).then((result) => {
-      if (result.payload) {
-        toast.success(result.payload);
-        window.location.reload();
-      } else {
-        toast.error(result.error.message);
+        setTimeout(() => {
+          animatedElement.style.animationPlayState = 'running';
+          animatedElement.dataset.paused = 'false';
+        }, 2000);
       }
-    });
-  };
+    };
 
-  const handleSignUp = (e) => {
-    e.preventDefault();
-    navigate('/signup');
-  };
+    const animatedElements = document.querySelectorAll('.animation-element');
+
+    animatedElements.forEach((element) => {
+      element.addEventListener('animationiteration', handleAnimationIteration);
+    });
+
+    return () => {
+      animatedElements.forEach((element) => {
+        element.removeEventListener('animationiteration', handleAnimationIteration);
+      });
+    };
+  }, []);
 
   return (
-    <div className="main">
-      {isLoading ? (
-        <div>Loading...</div>
-      ) : (
-        <div>
-          {isUser ? (
-            <div className="logged-in">
-              <button type="button" onClick={handleLogOut}>
-                Log Out
-              </button>
-              <h1>
-                welcome
-                {' '}
-                {user.name}
-              </h1>
-            </div>
-          ) : (
-            <div className="not-user">
-              <button type="button" onClick={handleLogIn}>
-                Login
-              </button>
-              <button type="button" onClick={handleSignUp}>
-                Sign Up
-              </button>
-              <h1>I am not logged in</h1>
-            </div>
-          )}
-        </div>
-      )}
+    <div className="home-page">
+      <div className="heading">
+        <h1>Better solution For Your Business</h1>
+        <p className="text">We are a team of talented designers making websites with Bootstrap</p>
+        <button className="button" type="button">Get Started</button>
+      </div>
+      <img className="animation-element second" data-paused="false" src="../../images/img2.png" alt="Car" />
+      <img className="animation-element third" data-paused="false" src="../../images/img3.png" alt="Car" />
+      <img className="animation-element first" data-paused="false" id="first" src="../../images/img1.png" alt="Car" />
     </div>
   );
 }

@@ -1,16 +1,160 @@
-.main {
-  display: grid;
-  place-items: center;
-  min-height: 100vh;
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400&family=Rye&display=swap');
+
+
+* {
+  font-family: "Jost", sans-serif;
 }
 
-.logged-in {
-  display: flex;
-  flex-direction: column-reverse;
+body {
+  overflow: hidden;
 }
 
-.not-user {
-  display: flex;
-  flex-direction: column-reverse;
-  gap: 10px;
+.paused {
+  animation-play-state: paused;
+}
+
+.home-page {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+ background-image: url('https://media.istockphoto.com/id/1194767216/vector/abstract-particle-technology-background.jpg?s=170667a&w=0&k=20&c=VVYhYMk6fl_fgj5fr_PE-kfA4swxKZxsyGyXTCJ85hE=');
+ background-repeat: no-repeat;
+ background-size: cover;
+}
+
+.home-page .heading {
+  margin: 15% 0 15% 18%;
+}
+
+.heading h1 {
+  color: #fff;
+  margin: 0;
+  font-size: 3.5rem;
+  line-height: 56px;
+  width: 40%;
+}
+
+
+.text {
+  color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 50px;
+    font-size: 24px;
+    width: 40%;
+}
+
+.button {
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 28px 11px 28px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin: 10px 0 0 0;
+  color: #fff;
+  background: #47b2e4;
+  border: none;
+}
+
+.first {
+  position: absolute;
+  top: 38%;
+  right: 26%;
+  height: 260px;
+  animation: first-car-motion 12s infinite;
+  opacity: 1; 
+  animation-delay: 0s;
+}
+
+
+.third {
+  position: absolute;
+  top: 24%;
+  right: 12%;
+  height: 230px;
+  animation: third-car-motion 12s infinite;
+  opacity: 1; 
+  animation-delay: 1s;
+}
+
+
+.second {
+  position: absolute;
+  top: 16%;
+  right: 38%;
+  height: 160px;
+  animation: second-car-motion 12s infinite;
+  opacity: 1;
+  animation-delay: 2s;
+}
+
+@keyframes first-car-motion {
+  0% {
+    top: 31%;
+    right: 33%;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    top: 38%;
+    right: 26%;
+  }
+  95% {
+    top: 38%;
+    right: 26%; 
+    opacity: 0.5;
+  }
+  100% {
+    top: 49%;
+    right: 15%;
+    opacity: 0;
+  }
+}
+
+@keyframes second-car-motion {
+  0% {
+    top: 16%;
+    right: 38%;
+    opacity: 0;
+  }
+  50% {
+    top: 23%;
+    right: 31%;
+    opacity: 1;
+  }
+  95% {
+    top: 23%;
+    right: 31%;
+    opacity: 0.5;
+  }
+  100% {
+    top: 34%;
+    right: 20%;
+    opacity: 0;
+  }
+}
+
+
+@keyframes third-car-motion {
+  0% {
+    top: 17%;
+    opacity: 0;
+    right: 5%;
+  }
+  50% {
+    top: 24%;
+    right: 12%;
+    opacity: 1;
+  }
+  95% {
+    top: 24%;
+    right: 12%;
+    opacity: 0.5;
+  }
+  100% {
+    top: 35%;
+    right: 23%;
+    opacity: 0;
+  }
 }
