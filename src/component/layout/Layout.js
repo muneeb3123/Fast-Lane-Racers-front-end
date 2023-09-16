@@ -44,7 +44,7 @@ const Layout = () => {
           <img src={logo} alt="logo" className="logo" />
         </section>
         <section className="menu-user">
-          <h2>Racers</h2>
+          <h2 className="menu-title">Racers</h2>
           <ul className="menu-container">
             <li className="menu-item"><Link to="/">MODELS</Link></li>
             <li className="menu-item"><Link to="/cars">CARS</Link></li>
