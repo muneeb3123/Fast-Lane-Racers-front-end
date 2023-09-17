@@ -7,6 +7,7 @@ import {
 import { Doughnut } from 'react-chartjs-2';
 import { fetchSpecificCar } from '../../../redux/cars/CarShowSlice';
 import './CarShow.css';
+import rowr from '../../../images/rowright.svg';
 
 Chart.register(
   Title, ArcElement, Legend,
@@ -65,56 +66,62 @@ export default function CarShow() {
   return (
     <>
       {displaySpecificCarArray.map((car) => (
-        <div className="car-show-container" key={car.id}>
-          <div className="car-image-container">
+        <main className="car-show-container" key={car.id}>
+          <section className="car-image-container">
             <img src={car.image} alt={car.name} className="car-image" />
-          </div>
+          </section>
 
-          <div className="car-details-container">
+          <section className="car-details-container">
             <div className="car-name-container">
               <h1 className="car-name">{car.name}</h1>
               <p className="deposit-details">- $200 deposit upon any car purchase</p>
             </div>
+            <div className="car-details-reserve">
+              <div className="purchase-details-container">
+                <div className="finance-fee-container">
+                  <p className="finance-fee-text">Finance fee</p>
+                  <p className="finance-fee-value">{car.finance_fee}</p>
+                </div>
 
-            <div className="purchase-details-container">
-              <div className="finance-fee-container">
-                <p className="finance-fee-text">Finance fee</p>
-                <p className="finance-fee-value">{car.finance_fee}</p>
+                <div className="option-to-purchase-fee-container">
+                  <p className="option-to-purchase-fee-text">Option to purchase fee</p>
+                  <p className="option-to-purchase-fee-value">{car.option_to_purchase_fee}</p>
+                </div>
+
+                <div className="total-amount-payable-container">
+                  <p className="total-amount-payable-text">Total amount payable</p>
+                  <p className="total-amount-payable-value">{car.total_amount_payable}</p>
+                </div>
+
+                <div className="duration-container">
+                  <p className="duration-text">Duration</p>
+                  <p className="duration-value">{car.duration}</p>
+                </div>
               </div>
+              <div className="rigth-side-container">
+                <div className="apr-percentage-container">
+                  <strong>
+                    {car.apr}
+                    % APR&nbsp;
+                  </strong>
+                  Representative
+                </div>
 
-              <div className="option-to-purchase-fee-container">
-                <p className="option-to-purchase-fee-text">Option to purchase fee</p>
-                <p className="option-to-purchase-fee-value">{car.option_to_purchase_fee}</p>
-              </div>
+                <div className="doughnut-chart-container">
+                  <Doughnut className="doughnut-chart" data={data} />
+                </div>
 
-              <div className="total-amount-payable-container">
-                <p className="total-amount-payable-text">Total amount payable</p>
-                <p className="total-amount-payable-value">{car.total_amount_payable}</p>
-              </div>
-
-              <div className="duration-container">
-                <p className="duration-text">Duration</p>
-                <p className="duration-value">{car.duration}</p>
+                <div className="reserve-btn-container">
+                  <button className="reserve-btn" type="button">
+                    Reserve
+                    {' '}
+                    <img src={rowr} alt="row right" className="rowr" />
+                  </button>
+                </div>
               </div>
             </div>
-
-            <div className="apr-percentage-container">
-              <strong>
-                {car.apr}
-                % APR&nbsp;
-              </strong>
-              Representative
-            </div>
-
-            <div className="doughnut-chart-container">
-              <Doughnut className="doughnut-chart" data={data} />
-            </div>
-
-            <div className="reserve-btn-container">
-              <button className="reserve-btn" type="submit">Reserve</button>
-            </div>
-          </div>
-        </div>
+          </section>
+        </main>
       ))}
     </>
   );

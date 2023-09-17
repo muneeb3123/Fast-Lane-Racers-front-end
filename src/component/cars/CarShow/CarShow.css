@@ -1,9 +1,13 @@
 .car-show-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 60px;
-  padding: 40px 5%;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+  min-height: 100vh;
+  margin-right: 20px;
+  padding: 10px;
+  width: 100%;
 }
 
 .car-image-container {
@@ -11,32 +15,44 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  padding: 10px;
+  min-height: 80vh;
+  place-items: center;
+  width: 60%;
 }
 
 .car-image {
+  border-radius: 50%;
   width: 90%;
-  height: 90%;
 }
 
 .car-details-container {
+  width: 40%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
-  gap: 50px;
-  width: 100%;
+  gap: 0.5rem;
 }
 
 .car-name-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
 }
 
 .car-name {
-  font-size: 70px;
+  font-size: 2rem;
+}
+
+.car-details-reserve {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .purchase-details-container {
@@ -44,7 +60,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 80%;
+  width: 100%;
 }
 
 .finance-fee-container,
@@ -55,11 +71,10 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
   width: 100%;
-  font-size: 25px;
-  line-height: 50px;
-  padding: 0 20px;
+  font-size: 1rem;
+  line-height: 20px;
+  padding: 10px 20px;
 }
 
 .finance-fee-container,
@@ -67,51 +82,108 @@
   background-color: #e2e3e5;
 }
 
+.rigth-side-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+}
+
 .apr-percentage-container {
-  font-size: 30px;
+  font-size: 1.5rem;
 }
 
 .doughnut-chart-container {
-  width: 170px;
-  height: 170px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  height: 10rem;
+  width: 10rem;
+}
+
+.reserve-btn-container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
 }
 
 .reserve-btn {
-  height: 60px;
-  width: 200px;
-  font-size: 25px;
-  border: 1px solid rgb(24, 160, 24);
-  border-radius: 50px;
-  background-color: rgb(14, 168, 14);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-family: 'nasa', sans-serif;
+  font-size: 1.3rem;
+  border-radius: 25px;
+  cursor: pointer;
+  background-color: #96bc4a;
   color: white;
+  padding: 8px 20px;
+  border: none;
+  transition: all 0.3s ease-in-out;
 }
 
-/* ==================== Desktop Version ======================== */
+.reserve-btn:hover {
+  transform: scale(1.1);
+}
 
-@media (min-width: 768px) {
+.rowr {
+  width: 28px;
+  height: 28px;
+}
+
+@media (max-width: 768px) {
   .car-show-container {
-    display: grid;
-    grid-template-columns: 63% 35%;
-    align-items: center;
-    justify-content: center;
-    gap: 2%;
+    flex-direction: column;
+    min-height: auto;
+    gap: 0.5rem;
   }
 
   .car-image-container {
-    align-items: flex-start;
+    min-height: auto;
+    width: 100%;
+  }
+
+  .car-image {
+    width: 20rem;
   }
 
   .car-details-container {
-    align-items: flex-end;
-
-    /* border: 1px solid red; */
+    align-items: center;
+    max-width: none;
+    width: 100%;
+    gap: 1rem;
   }
 
   .car-name-container {
-    align-items: flex-end;
+    align-items: center;
+  }
+
+  .car-details-reserve {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .rigth-side-container {
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 590px) {
+  .car-details-reserve {
+    flex-direction: column;
   }
 
   .purchase-details-container {
+    width: 100%;
+  }
+
+  .rigth-side-container {
     width: 100%;
   }
 }

@@ -31,14 +31,14 @@ const CardCar = (
         <hr className="line-doted" />
         <p className="description">{description}</p>
         <div className="social-buttons">
-          <a href="www.facebook.com" className="social-button" target="_blank" rel="noopener noreferrer">
-            <img src="./images/facebook.svg" alt="facebook logo" />
+          <a href="https://www.facebook.com" className="social-button" target="_blank" rel="noopener noreferrer">
+            <img src="./images/facebook.svg" alt="facebook logo" className="social-icon" />
           </a>
-          <a href="www.twitter.com" className="social-button" target="_blank" rel="noopener noreferrer">
-            <img src="./images/twitter.svg" alt="twitter logo" />
+          <a href="https://www.twitter.com" className="social-button" target="_blank" rel="noopener noreferrer">
+            <img src="./images/twitter.svg" alt="twitter logo" className="social-icon" />
           </a>
-          <a href="www.instagram.com" className="social-button" target="_blank" rel="noopener noreferrer">
-            <img src="./images/instagram.svg" alt="instagram logo" />
+          <a href="https://www.instagram.com" className="social-button" target="_blank" rel="noopener noreferrer">
+            <img src="./images/instagram.svg" alt="instagram logo" className="social-icon" />
           </a>
         </div>
       </div>
