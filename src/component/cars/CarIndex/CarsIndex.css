@@ -89,7 +89,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.62em;  
+  gap: 0.62em;
 }
 
 .social-icon {
@@ -164,6 +164,7 @@
 .index-title {
   font-size: 2rem;
 }
+
 @media screen and (max-width: 500px) {
   body {
     font-size: 12px;
