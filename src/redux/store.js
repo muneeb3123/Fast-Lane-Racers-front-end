@@ -4,6 +4,7 @@ import logoutSlice from './auth/logoutSlice';
 import allCarsSlice from './cars/CarsIndexSlice';
 import specificCarSlice from './cars/CarShowSlice';
 import addNewCarSlice from './cars/AddNewCarSlice';
+import reservationReducer from './reservation/reservationSlice';
 
 const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ const store = configureStore({
     allCarsReducer: allCarsSlice,
     specificCarReducer: specificCarSlice,
     addNewCarReducer: addNewCarSlice,
+    reservations: reservationReducer,
   },
 });
 
