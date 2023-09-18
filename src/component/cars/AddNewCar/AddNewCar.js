@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
 import { createNewCar } from '../../../redux/cars/AddNewCarSlice';
 import './AddNewCar.css';
 
 export default function AddNewCar() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const [carData, setCarData] = useState({
     name: '',
     finance_fee: 0,
@@ -23,6 +26,7 @@ export default function AddNewCar() {
       .then(() => {
         // Handle success, e.g., show a success message or redirect
         console.log('New car added successfully');
+        navigate('/cars');
       })
       .catch((error) => {
         // Handle error, e.g., show an error message
@@ -58,6 +62,8 @@ export default function AddNewCar() {
         />
         <button type="submit">Add New Car</button>
       </form>
+
+      <Link to="/cars">Back to Cars</Link>
     </section>
   );
 }
