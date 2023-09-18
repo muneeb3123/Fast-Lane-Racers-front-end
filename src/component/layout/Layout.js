@@ -1,4 +1,10 @@
-import { Link, Outlet, useNavigate } from 'react-router-dom';
+import {
+  Link,
+  Outlet,
+  useLocation,
+  useNavigate,
+} from 'react-router-dom';
+// import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-hot-toast';
 import { logOut } from '../../redux/auth/logoutSlice';
@@ -14,10 +20,14 @@ import microverse from '../../images/microverse-sm.png';
 const Layout = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const location = useLocation();
+
   const handleClickMenu = () => {
     const btnMenu = document.querySelector('.menu');
     btnMenu.classList.toggle('activate');
   };
+
+  const isHome = location.pathname === '/' || location.pathname === '/login' || location.pathname === '/signup';
   const { isUser } = useSelector((state) => state.currentUser);
   const handleClickLogout = (e) => {
     e.preventDefault();
@@ -35,11 +45,11 @@ const Layout = () => {
   return (
     <>
       <header className="mobil-icon">
-        <button className="menu-icon" type="button" onClick={handleClickMenu}>
+        <button className={`menu-icon ${isHome ? 'show-menu-icon' : ''}`} type="button" onClick={handleClickMenu}>
           <img src={menu} alt="mobile menu" />
         </button>
       </header>
-      <aside className="menu">
+      <aside className={`menu ${isHome ? 'hide-menu' : ''}`}>
         <section className="menu-header">
           <img src={logo} alt="logo" className="logo" />
         </section>
@@ -76,7 +86,7 @@ const Layout = () => {
           </a>
         </section>
       </aside>
-      <main className="principal">
+      <main className={`principal ${isHome ? 'adjust-principal' : ''}`}>
         <Outlet />
       </main>
     </>
