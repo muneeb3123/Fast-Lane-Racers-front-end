@@ -1,49 +1,75 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router';
-import { toast } from 'react-hot-toast';
-import { logOut } from '../../redux/auth/logoutSlice';
+import React from 'react';
+import {
+  Pagination, A11y, Autoplay, EffectFade, Navigation,
+} from 'swiper/modules';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/autoplay';
+import 'swiper/css/navigation';
+import 'swiper/css/effect-fade';
+import 'swiper/css/pagination';
+
+import img3 from '../../images/img2.webp';
+import img1 from '../../images/img3.webp';
+import img2 from '../../images/home2.png';
+import img4 from '../../images/img4.webp';
+
 import './home.css';
 
 function Home() {
-  useEffect(() => {
-    const handleAnimationIteration = (event) => {
-      const animatedElement = event.target;
-      const isPaused = animatedElement.dataset.paused === 'true';
-
-      if (!isPaused) {
-        animatedElement.style.animationPlayState = 'paused';
-
-        setTimeout(() => {
-          animatedElement.style.animationPlayState = 'running';
-          animatedElement.dataset.paused = 'false';
-        }, 2000);
-      }
-    };
-
-    const animatedElements = document.querySelectorAll('.animation-element');
-
-    animatedElements.forEach((element) => {
-      element.addEventListener('animationiteration', handleAnimationIteration);
-    });
-
-    return () => {
-      animatedElements.forEach((element) => {
-        element.removeEventListener('animationiteration', handleAnimationIteration);
-      });
-    };
-  }, []);
-
   return (
-    <div className="home-page">
-      <div className="heading">
-        <h1>Better solution For Your Business</h1>
-        <p className="text">We are a team of talented designers making websites with Bootstrap</p>
-        <button className="button" type="button">Get Started</button>
-      </div>
-      <img className="animation-element second" data-paused="false" src="../../images/img2.png" alt="Car" />
-      <img className="animation-element third" data-paused="false" src="../../images/img3.png" alt="Car" />
-      <img className="animation-element first" data-paused="false" id="first" src="../../images/img1.png" alt="Car" />
+    <div>
+      <Swiper
+        modules={[Pagination, Navigation, A11y, Autoplay, EffectFade]}
+        slidesPerView={1}
+        pagination={{ clickable: true }}
+        autoplay={{ delay: 2000, disableOnInteraction: false }}
+        effect="fade"
+        loop
+        allowTouchMove={false}
+      >
+        <SwiperSlide style={{ backgroundImage: `url(${img3})`, backgroundColor: '#950602' }}>
+          <div className="content">
+            <div className="header-link">
+              <p className="home-header">Ferrari 488</p>
+              <div className="underline" />
+              <p className="text">Ferrari, a symbol of speed and style, roars with Italian passion on every road</p>
+              <button className="button" type="button" style={{ backgroundColor: 'yellowgreen' }}>Learn more</button>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide style={{ backgroundImage: `url(${img1})`, backgroundColor: 'green' }}>
+          <div className="content">
+            <div className="header-link">
+              <p className="home-header">Ferrari 488</p>
+              <div className="underline" />
+              <p className="text">It boasts a 660 horsepower 3.9-liter V8 engine with twin turbochargers.</p>
+              <button className="button" type="button" style={{ backgroundColor: 'red' }}>Learn more</button>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide style={{ backgroundImage: `url(${img2})`, backgroundColor: 'blue' }}>
+          <div className="content">
+            <div className="header-link">
+              <p className="home-header">Ferrari 488</p>
+              <div className="underline" />
+              <p className="text">Advanced aerodynamics and technology enhance its handling and versatility.</p>
+              <button className="button" type="button" style={{ backgroundColor: '#FFA500 ' }}>Learn more</button>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide style={{ backgroundImage: `url(${img4})`, backgroundColor: 'purple' }}>
+          <div className="content">
+            <div className="header-link">
+              <p className="home-header">Ferrari 488</p>
+              <div className="underline" />
+              <p className="text">The Ferrari 488 is a high-performance sports car known for its stunning design</p>
+              <button className="button" type="button" style={{ backgroundColor: 'yellowgreen' }}>Learn more</button>
+            </div>
+          </div>
+        </SwiperSlide>
+      </Swiper>
     </div>
   );
 }
