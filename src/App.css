@@ -45,7 +45,8 @@ body {
 /* Input fields */
 input[type="email"],
 input[type="password"],
-input[type="text"] {
+input[type="text"],
+input[type="number"] {
   margin: 10px 0;
   padding: 5px;
   border-radius: 5px;
