@@ -24,8 +24,6 @@ export default function AddNewCar() {
     dispatch(createNewCar(carData))
       .unwrap()
       .then(() => {
-        // Handle success, e.g., show a success message or redirect
-        console.log('New car added successfully');
         navigate('/cars');
       })
       .catch((error) => {
