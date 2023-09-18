@@ -15,6 +15,7 @@ export default function AddNewCar() {
     total_amount_payable: 0,
     duration: '',
     apr: 0.0,
+    color: '',
     image: '',
     description: '',
   });
@@ -51,6 +52,7 @@ export default function AddNewCar() {
         <input type="number" name="total_amount_payable" placeholder="Total Amount Payable" onChange={handleChange} />
         <input type="text" name="duration" placeholder="Duration" onChange={handleChange} />
         <input type="number" name="apr" placeholder="APR" step={0.01} onChange={handleChange} />
+        <input type="text" name="color" placeholder="Color" onChange={handleChange} />
         <input type="text" name="image" placeholder="Image Link" onChange={handleChange} />
         <textarea
           name="description"

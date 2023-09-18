@@ -10,8 +10,13 @@ const initialState = {
 
 // Define the async thunk for creating a new car
 export const createNewCar = createAsyncThunk('cars/createNewCar', async (carData) => {
+  const token = localStorage.getItem('token');
   try {
-    const response = await axios.post('http://127.0.0.1:3000/cars', carData);
+    const response = await axios.post('http://127.0.0.1:3000/cars', carData, {
+      headers: {
+        Authorization: token,
+      },
+    });
     return response.data;
   } catch (error) {
     throw error.response.data; // Throw the API error response
