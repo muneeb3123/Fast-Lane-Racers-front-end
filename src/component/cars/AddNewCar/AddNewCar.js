@@ -10,11 +10,11 @@ export default function AddNewCar() {
 
   const [carData, setCarData] = useState({
     name: '',
-    finance_fee: 0,
-    option_to_purchase_fee: 0,
-    total_amount_payable: 0,
+    finance_fee: '',
+    option_to_purchase_fee: '',
+    total_amount_payable: '',
     duration: '',
-    apr: 0.0,
+    apr: '',
     color: '',
     image: '',
     description: '',
@@ -26,10 +26,14 @@ export default function AddNewCar() {
       .unwrap()
       .then(() => {
         navigate('/cars');
+        // if (result.payload) {
+        // } else {
+        //   console.log('Error adding new car:', result);
+        // }
       })
       .catch((error) => {
         // Handle error, e.g., show an error message
-        console.error('Error adding new car:', error);
+        console.log('Error adding new car:', error);
       });
   };
 
