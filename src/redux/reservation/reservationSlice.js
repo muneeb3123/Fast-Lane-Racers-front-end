@@ -46,7 +46,7 @@ const reservationSlice = createSlice({
   name: 'reservations',
   initialState: {
     reservationList: [],
-    addReservationMsg: '',
+    addReservationMsg: null,
   },
   reducers: {},
   extraReducers: (builder) => {
