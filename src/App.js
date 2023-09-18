@@ -10,6 +10,8 @@ import { currentUser } from './redux/auth/currentUserSlice';
 import CarsIndex from './component/cars/CarIndex/CarIndex';
 import CarShow from './component/cars/CarShow/CarShow';
 import Layout from './component/layout/Layout';
+import AddReservation from './component/reservation/AddReservation';
+import ReservationList from './component/reservation/ReservationList';
 
 function App() {
   const dispatch = useDispatch();
@@ -26,6 +28,8 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/cars" element={<CarsIndex />} />
           <Route path="/cars/:id" element={<CarShow />} />
+          <Route path="/cars/:id/add/reservation" element={<AddReservation />} />
+          <Route path="/my-reservations" element={<ReservationList />} />
         </Route>
       </Routes>
     </BrowserRouter>
