@@ -23,7 +23,6 @@
   background-color: #eaf3eb;
 }
 
-
 .card-container {
   display: flex;
   flex-direction: column;
@@ -52,6 +51,7 @@
   height: 11.25rem;
   border-radius: 50%;
   position: relative;
+
   /* z-index: -1; */
   cursor: pointer;
 }
@@ -62,6 +62,7 @@
   position: absolute;
   border-radius: 50%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
   /* z-index: 20; */
   cursor: pointer;
 }
@@ -89,6 +90,14 @@
   justify-content: center;
   align-items: center;
   gap: 0.62em;
+}
+
+.social-icon {
+  cursor: pointer;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
 }
 
 .swiper-button-prev {
@@ -149,6 +158,11 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 6rem;
+  margin-top: 1rem;
+}
+
+.index-title {
+  font-size: 2rem;
 }
 
 @media screen and (max-width: 500px) {

@@ -1,4 +1,8 @@
 import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router';
+import { toast } from 'react-hot-toast';
+import { logOut } from '../../redux/auth/logoutSlice';
 import './home.css';
 
 function Home() {

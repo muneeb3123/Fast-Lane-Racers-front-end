@@ -63,13 +63,8 @@ export default function CarsIndex() {
       ) : (
         <p>No cars found</p>
       )}
-      <section
-        slot="container-start"
-        style={{
-          display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', marginBottom: '1rem',
-        }}
-      >
-        <h1 style={{ fontSize: '2rem' }}>Latest models</h1>
+      <section slot="container-start" className="slot-start">
+        <h1 className="index-title">Latest models</h1>
         <p className="header-instruction">Please Select a Car Model</p>
         <hr className="line-doted" />
       </section>
