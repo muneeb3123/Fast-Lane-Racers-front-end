@@ -13,10 +13,29 @@
   transition: all 0.5s ease-in-out;
 }
 
+.menu-icon {
+  display: none;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 15;
+  border: none;
+  background-color: transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-icon:focus {
+  outline: none;
+}
+
+.menu-icon:hover {
+  transform: scale(1.1);
+}
+
 .principal {
   margin-left: 10rem;
-
-  /* padding: 1.5rem; */
 }
 
 a {
@@ -52,10 +71,6 @@ a {
 
   /* border-radius: 0.312em; */
   color: #fff;
-}
-
-.menu-icon {
-  display: none;
 }
 
 .menu-header,
@@ -96,8 +111,6 @@ a {
   width: 7.5rem;
   height: auto;
   border-radius: 10%;
-
-  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
 }
 
 .logout {
@@ -122,6 +135,39 @@ a {
   transform: scale(1.1);
 }
 
+.hide-menu {
+  display: none;
+}
+
+.activate {
+  animation-duration: 0.5s;
+  animation-name: slidein;
+  display: flex;
+  z-index: 14;
+  background-color: #e9e8ef;
+}
+
+@keyframes slidein {
+  from {
+    margin-right: 100%;
+    width: 0%;
+  }
+
+  to {
+    margin-right: 0%;
+    width: 10rem;
+  }
+}
+
+.adjust-principal {
+  margin-left: 0;
+  margin-top: 1rem;
+}
+
+.show-menu-icon {
+  display: flex;
+}
+
 @media screen and (max-width: 768px) {
   body {
     overflow-x: hidden;
@@ -139,25 +185,6 @@ a {
 
   .menu-icon {
     display: flex;
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    font-size: 2rem;
-    cursor: pointer;
-    z-index: 15;
-    border: none;
-    background-color: transparent;
-    transition: all 0.3s ease-in-out;
-  }
-
-  .menu-icon:focus {
-    outline: none;
-  }
-
-  .menu-icon:hover {
-    transform: scale(1.1);
-
-    /* transform: rotate(90deg); */
   }
 
   .activate {
@@ -172,15 +199,11 @@ a {
     from {
       margin-right: 100%;
       width: 0%;
-
-      /* background-color: transparent; */
     }
 
     to {
       margin-right: 0%;
       width: 10rem;
-
-      /* background-color: #e9e8ef; */
     }
   }
 }
