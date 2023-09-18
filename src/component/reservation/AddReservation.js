@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { addReservation } from '../../redux/reservation/reservationSlice';
 
 const AddReservation = () => {
   const [city, setCity] = useState('');
   const [date, setDate] = useState('');
+  const navigation = useNavigate();
   const carId = useParams();
   const dispatch = useDispatch();
 
@@ -19,6 +20,7 @@ const AddReservation = () => {
     dispatch(addReservation(reservation));
     setCity('');
     setDate('');
+    navigation('/my-reservations');
   };
 
   return (

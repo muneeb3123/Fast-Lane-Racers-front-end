@@ -12,6 +12,7 @@ import CarShow from './component/cars/CarShow/CarShow';
 import Layout from './component/layout/Layout';
 import AddReservation from './component/reservation/AddReservation';
 import ReservationList from './component/reservation/ReservationList';
+import CarDelete from './component/cars/CarDelete/CarDelete';
 
 function App() {
   const dispatch = useDispatch();
@@ -30,6 +31,8 @@ function App() {
           <Route path="/cars/:id" element={<CarShow />} />
           <Route path="/cars/:id/add/reservation" element={<AddReservation />} />
           <Route path="/my-reservations" element={<ReservationList />} />
+          <Route path="/addcar" element={<h1>Add car here</h1>} />
+          <Route path="/removecar" element={<CarDelete />} />
         </Route>
       </Routes>
     </BrowserRouter>
