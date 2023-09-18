@@ -1,0 +1,27 @@
+.add-new-car-page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  gap: 30px;
+  padding-top: 20px;
+}
+
+.add-new-car-heading {
+  font-size: 40px;
+}
+
+.add-new-car-form {
+  width: 100%;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.description {
+  height: 51px;
+  text-align: start;
+}
