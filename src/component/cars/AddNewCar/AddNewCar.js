@@ -23,13 +23,12 @@ export default function AddNewCar() {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(createNewCar(carData))
-      .unwrap()
-      .then(() => {
-        navigate('/cars');
-        // if (result.payload) {
-        // } else {
-        //   console.log('Error adding new car:', result);
-        // }
+      .then((action) => {
+        if (action.payload.data) {
+          navigate('/cars');
+        } else {
+          console.log(action.payload.error);
+        }
       })
       .catch((error) => {
         // Handle error, e.g., show an error message
