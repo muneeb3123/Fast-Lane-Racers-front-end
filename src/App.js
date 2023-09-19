@@ -4,16 +4,16 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { currentUser } from './redux/auth/currentUserSlice';
 import './App.css';
-import Login from './component/auth/Login';
-import SignUp from './component/auth/SignUp';
-import Home from './component/home/Home';
-import CarsIndex from './component/cars/CarIndex/CarIndex';
-import CarShow from './component/cars/CarShow/CarShow';
-import Layout from './component/layout/Layout';
-import AddNewCar from './component/cars/AddNewCar/AddNewCar';
-import AddReservation from './component/reservation/AddReservation';
-import ReservationList from './component/reservation/ReservationList';
-import CarDelete from './component/cars/CarDelete/CarDelete';
+import Login from './components/auth/Login';
+import SignUp from './components/auth/SignUp';
+import Home from './components/home/Home';
+import CarsIndex from './components/cars/CarIndex/CarIndex';
+import CarShow from './components/cars/CarShow/CarShow';
+import Layout from './components/layout/Layout';
+import AddNewCar from './components/cars/AddNewCar/AddNewCar';
+import AddReservation from './components/reservation/AddReservation';
+import ReservationList from './components/reservation/ReservationList';
+import CarDelete from './components/cars/CarDelete/CarDelete';
 
 function App() {
   const dispatch = useDispatch();
