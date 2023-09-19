@@ -191,9 +191,9 @@ Render or any other platform.
 
 👤 **Ashna Ali**
 
-- GitHub: [@ngeelani48](https://github.com/ngeelani48)
-- Twitter: [@twitterhandle](https://twitter.com/ngeelani48)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/muhammad-nafees/)
+- GitHub: [@Ashnaali3255](https://github.com/Ashnaali3255)
+- Twitter: [@Ashna_Ali1](https://twitter.com/Ashna_Ali1)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/ashna-ali-342151255/)
 
 👤 **Sameed Mohsin**
 
