@@ -59,7 +59,7 @@ const Layout = () => {
             <li className="menu-item"><Link to="/">MODELS</Link></li>
             <li className="menu-item"><Link to="/cars">CARS</Link></li>
             <li className="menu-item"><Link to="/my-reservations">MY RESERVATIONS</Link></li>
-            <li className="menu-item"><Link to="/addcar">ADD A CAR</Link></li>
+            <li className="menu-item"><Link to="/add_new_car">ADD A CAR</Link></li>
             <li className="menu-item"><Link to="/removecar">REMOVE A CAR</Link></li>
             {
               isUser

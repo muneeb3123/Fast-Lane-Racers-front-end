@@ -31,3 +31,33 @@ input::-webkit-inner-spin-button {
   text-align: start;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.add-new-car-form input[type="email"],
+.add-new-car-form input[type="password"],
+.add-new-car-form input[type="text"],
+.add-new-car-form input[type="number"] {
+  margin: 10px 0;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+
+.add-new-car-form button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+ .add-new-car-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 300px;
+  margin: 0 auto;
+}

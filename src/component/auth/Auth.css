@@ -69,7 +69,7 @@ input::placeholder {
   color: #D1D6DC;
 }
 
-button[type="submit"] {
+.form-container button[type="submit"] {
   background-color: #ED1C24;
   color: #fff;
   padding: 20px 14px;

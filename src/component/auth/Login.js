@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import { toast } from 'react-hot-toast';
 import { useDispatch, useSelector } from 'react-redux';
-import './Login.css';
+import './Auth.css';
 import { Link } from 'react-router-dom';
 import { currentUser } from '../../redux/auth/currentUserSlice';
 
