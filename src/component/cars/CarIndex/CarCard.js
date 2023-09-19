@@ -29,7 +29,7 @@ const CardCar = (
       <div className="details">
         <h2>{name}</h2>
         <hr className="line-doted" />
-        <p className="description">{description}</p>
+        <p className="car-description">{description}</p>
         <div className="social-buttons">
           <a href="https://www.facebook.com" className="social-button" target="_blank" rel="noopener noreferrer">
             <img src="./images/facebook.svg" alt="facebook logo" className="social-icon" />
