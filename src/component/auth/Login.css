@@ -1,12 +1,11 @@
 
 @media (min-width: 768px) {
-    
-.login-main {
+  .login-main {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    background-color: #1F1F1F;
+    background-color: #1f1f1f;
   }
-  
+
   .login-background {
     height: 100vh;
     background-image: url('../../images/login3.jpeg');
@@ -16,12 +15,12 @@
     filter: brightness(1.5);
     position: relative;
   }
-  
+
   .form-container {
     padding: 60px;
     width: 100%;
   }
-  
+
   .form-wrapper {
     display: flex;
     flex-direction: column;
@@ -30,13 +29,17 @@
     width: 100%;
     justify-content: center;
   }
-  
+
+  input[type="password"] {
+    margin-bottom: 30px;
+  }
+
   /* Input fields */
   .login-form input[type="email"],
   .login-form input[type="password"],
   .login-form input[type="text"],
   .login-form input[type="number"] {
-    padding:25px 17px;
+    padding: 25px 17px;
     margin: 10px 0;
     border: 1px solid #ccc;
     color: #fff;
@@ -64,20 +67,16 @@
   .inf-wrap a {
     padding: 9px 15px;
     background: #fff;
-    border-radius: 25px;    
+    border-radius: 25px;
   }
-  
-  input[type="password"] {
-    margin-bottom: 30px;
-  }
-  
+
   input::placeholder {
-    color: #D1D6DC;
+    color: #d1d6dc;
   }
-  
+
   /* Submit button */
   button[type="submit"] {
-    background-color: #ED1C24;
+    background-color: #ed1c24;
     color: #fff;
     padding: 20px 14px;
     border: none;
@@ -87,32 +86,31 @@
     max-width: 700px;
     font-size: 1.5rem;
   }
-  
+
   .login-bottom {
     margin-top: 5%;
     display: flex;
     gap: 10px;
   }
-  
+
   .form-logo {
-    font-family: ferro;
+    font-family: 'ferro', sans-serif;
     font-size: 2rem;
   }
-
 }
 
 @media (min-width: 1300px) {
-    .login-background {
-        background-size: 100% 100%;
-      }
+  .login-background {
+    background-size: 100% 100%;
+  }
 
-      .login-title {
-        font-size: 2.2rem;
-      }
+  .login-title {
+    font-size: 2.2rem;
+  }
 }
 
 @media (min-width: 1800px) {
-    .form-container {
-        padding-left: 6rem;
-    }
+  .form-container {
+    padding-left: 6rem;
+  }
 }
