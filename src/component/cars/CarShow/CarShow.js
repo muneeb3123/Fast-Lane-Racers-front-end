@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useLocation } from 'react-router-dom/';
+import { Link, useLocation } from 'react-router-dom/';
 import {
   Chart, Title, ArcElement, Legend,
 } from 'chart.js';
@@ -112,11 +112,11 @@ export default function CarShow() {
                 </div>
 
                 <div className="reserve-btn-container">
-                  <button className="reserve-btn" type="button">
+                  <Link to={`/cars/${car.id}/add/reservation`} className="reserve-btn">
                     Reserve
                     {' '}
                     <img src={rowr} alt="row right" className="rowr" />
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>

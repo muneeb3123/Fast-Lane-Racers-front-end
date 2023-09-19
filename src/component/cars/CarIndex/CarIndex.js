@@ -5,18 +5,17 @@ import {
   Scrollbar,
   A11y,
 } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { fetchAllCars } from '../../../redux/cars/CarsIndexSlice';
+import './CarsIndex.css';
 // import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
-import './CarsIndex.css';
-
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+import 'swiper/css/bundle';
+// import 'swiper/css/navigation';
+// import 'swiper/css/pagination';
+// import 'swiper/css/scrollbar';
 import CarCard from './CarCard';
 
 export default function CarsIndex() {
@@ -33,7 +32,7 @@ export default function CarsIndex() {
 
   return (
     <Swiper
-      className="swiper-container"
+      className="swiper-container container-index"
       modules={[EffectFade, Navigation, Pagination, Scrollbar, A11y]}
       // spaceBetween={0}
       slidesPerView={1}

@@ -4,7 +4,7 @@
   --color3: #efefef;
   --color4: #b17373;
   --color5: #45a453;
-  --color6: #927842;
+  --color6: #dce990;
 }
 
 @font-face {
@@ -15,6 +15,11 @@
 @font-face {
   font-family: 'nasa';
   src: url(./assets/fonts/nasa.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'ferro';
+  src: url(./assets/fonts/FerroRosso.woff2) format('woff2');
 }
 
 * {
@@ -31,7 +36,8 @@ body {
 /* Login and Sign-up styles */
 
 /* Background image for login and signup pages */
-.login-bg {
+
+/* .login-bg {
   background-image: url('../src/images/background\ image.png');
   background-size: cover;
   background-position: center;
@@ -40,10 +46,11 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
+} */
 
 /* Input fields */
-input[type="email"],
+
+/* input[type="email"],
 input[type="password"],
 input[type="text"],
 input[type="number"] {
@@ -52,10 +59,11 @@ input[type="number"] {
   border-radius: 5px;
   border: 1px solid #ccc;
   width: 100%;
-}
+} */
 
 /* Submit button */
-button[type="submit"] {
+
+/* button[type="submit"] {
   background-color: #007bff;
   color: #fff;
   padding: 10px 20px;
@@ -63,16 +71,17 @@ button[type="submit"] {
   border: none;
   cursor: pointer;
   margin-top: 10px;
-}
+} */
 
 /* Center the form on the page */
-form {
+
+/* form {
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 300px;
   margin: 0 auto;
-}
+} */
 
 /* Error message styles */
 .toast-error {

@@ -19,7 +19,7 @@ import './home.css';
 
 function Home() {
   return (
-    <div>
+    <div className="home-container">
       <Swiper
         modules={[Pagination, Navigation, A11y, Autoplay, EffectFade]}
         slidesPerView={1}

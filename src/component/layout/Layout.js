@@ -58,7 +58,9 @@ const Layout = () => {
           <ul className="menu-container">
             <li className="menu-item"><Link to="/">MODELS</Link></li>
             <li className="menu-item"><Link to="/cars">CARS</Link></li>
-            <li className="menu-item"><Link to="/cars">MY RESERVATIONS</Link></li>
+            <li className="menu-item"><Link to="/my-reservations">MY RESERVATIONS</Link></li>
+            <li className="menu-item"><Link to="/addcar">ADD A CAR</Link></li>
+            <li className="menu-item"><Link to="/removecar">REMOVE A CAR</Link></li>
             {
               isUser
                 ? <li className="menu-item"><button type="button" className="logout" onClick={handleClickLogout}>LOGOUT</button></li>

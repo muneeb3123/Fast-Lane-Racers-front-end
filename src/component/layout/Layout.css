@@ -66,6 +66,11 @@ a {
   border-bottom: 1px solid #ccc;
 }
 
+.menu-item a {
+  width: 100%;
+  display: block;
+}
+
 .menu-item:hover {
   background-color: #96bc4a;
 
@@ -161,7 +166,8 @@ a {
 
 .adjust-principal {
   margin-left: 0;
-  margin-top: 1rem;
+
+  /* margin-top: 1rem; */
 }
 
 .show-menu-icon {
@@ -180,7 +186,8 @@ a {
 
   .principal {
     margin-left: 0;
-    margin-top: 1rem;
+
+    /* margin-top: 1rem; */
   }
 
   .menu-icon {

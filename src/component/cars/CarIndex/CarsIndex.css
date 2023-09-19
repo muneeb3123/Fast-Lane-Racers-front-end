@@ -1,18 +1,3 @@
-:root {
-  --color1: #d1eae7;
-  --color2: #5973b5;
-  --color3: #efefef;
-  --color4: #b17373;
-  --color5: #45a453;
-  --color6: #927842;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .car-page {
   display: grid;
   grid-template-columns: 10% 90%;
@@ -67,7 +52,7 @@
   cursor: pointer;
 }
 
-.swiper-container {
+.container-index {
   display: flex;
   justify-content: center;
   width: 100%;
