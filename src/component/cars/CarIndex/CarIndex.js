@@ -5,13 +5,12 @@ import {
   Scrollbar,
   A11y,
 } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { fetchAllCars } from '../../../redux/cars/CarsIndexSlice';
-// import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
-
 import './CarsIndex.css';
+// import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
 import 'swiper/css';
 import 'swiper/css/navigation';

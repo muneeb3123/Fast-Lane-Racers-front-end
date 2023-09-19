@@ -7,11 +7,11 @@
   --color6: #927842;
 }
 
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
+} */
 
 .car-page {
   display: grid;
