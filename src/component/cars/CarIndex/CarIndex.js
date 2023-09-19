@@ -12,10 +12,10 @@ import { fetchAllCars } from '../../../redux/cars/CarsIndexSlice';
 import './CarsIndex.css';
 // import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+import 'swiper/css/bundle';
+// import 'swiper/css/navigation';
+// import 'swiper/css/pagination';
+// import 'swiper/css/scrollbar';
 import CarCard from './CarCard';
 
 export default function CarsIndex() {
@@ -32,7 +32,7 @@ export default function CarsIndex() {
 
   return (
     <Swiper
-      className="swiper-container"
+      className="swiper-container container-index"
       modules={[EffectFade, Navigation, Pagination, Scrollbar, A11y]}
       // spaceBetween={0}
       slidesPerView={1}
