@@ -50,7 +50,7 @@ export const delReservation = createAsyncThunk(
       Authorization: `${token}`,
     };
     try {
-      const res = await axios.post(delApiUrl, {
+      const res = await axios.delete(delApiUrl, {
         headers,
       });
       toast.success(res.data.response);
