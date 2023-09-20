@@ -14,7 +14,7 @@ import './CarsIndex.css';
 import 'swiper/css/bundle';
 import CarCard from './CarCard';
 
-export default function CarsIndex() {
+const CarsIndex = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -67,4 +67,6 @@ export default function CarsIndex() {
       )}
     </div>
   );
-}
+};
+
+export default CarsIndex;

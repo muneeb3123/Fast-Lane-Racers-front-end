@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { currentUser } from '../../redux/auth/currentUserSlice';
 import { loginUser } from '../../redux/auth/LoginSlice';
 
-function Login() {
+const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const { isUser } = useSelector((state) => state.currentUser);
@@ -65,6 +65,6 @@ function Login() {
       </div>
     </div>
   );
-}
+};
 
 export default Login;

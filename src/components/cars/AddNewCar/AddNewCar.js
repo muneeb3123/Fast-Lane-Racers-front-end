@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { createNewCar } from '../../../redux/cars/AddNewCarSlice';
 import './AddNewCar.css';
 
-export default function AddNewCar() {
+const AddNewCar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -69,4 +69,6 @@ export default function AddNewCar() {
       <Link to="/cars">Back to Cars</Link>
     </section>
   );
-}
+};
+
+export default AddNewCar;

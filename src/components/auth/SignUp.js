@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { currentUser } from '../../redux/auth/currentUserSlice';
 import './Auth.css';
 
-function SignUp() {
+const SignUp = () => {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [error, setError] = useState('');
@@ -72,6 +72,6 @@ function SignUp() {
       </div>
     </div>
   );
-}
+};
 
 export default SignUp;
