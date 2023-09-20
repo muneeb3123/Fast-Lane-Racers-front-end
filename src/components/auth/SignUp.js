@@ -19,7 +19,6 @@ function SignUp() {
 
   useEffect(() => {
     if (isUser) {
-      toast.error('You are already logged in');
       navigate('/');
     }
   }, [isUser, navigate]);

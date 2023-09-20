@@ -36,7 +36,7 @@ export const addReservation = createAsyncThunk(
       toast.success(res.data.response);
       return res.data.response;
     } catch (error) {
-      toast.error(error);
+      toast.error(error.response.data);
       return thunkAPI.rejectWithValue('Unable to get data');
     }
   },

@@ -12,7 +12,7 @@ export const currentUser = createAsyncThunk('current/fetch', async () => {
     });
     return response.data.user;
   } catch (error) {
-    throw error.response.data.message; // Change to error.response.data.message
+    throw error.response.data.message;
   }
 });
 
@@ -47,7 +47,7 @@ const currentUserSlice = createSlice({
         ...state,
         user: null,
         isUser: false,
-        error: action.error.message, // Access error message
+        error: action.error.message,
         isLoading: false,
       }));
   },

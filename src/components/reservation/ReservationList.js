@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { Swiper } from 'swiper/react';
 import {
   EffectFade,
@@ -13,9 +14,17 @@ import ReservationItem from './ReservationItem';
 
 const ReservationList = () => {
   const dispatch = useDispatch();
+  const { isUser } = useSelector((state) => state.currentUser);
+  const navigate = useNavigate();
   const reservation = useSelector(
     (state) => state.reservations.reservationList,
   );
+
+  useEffect(() => {
+    if (!isUser) {
+      navigate('/login');
+    }
+  }, [isUser]);
 
   useEffect(() => {
     dispatch(getReservation());
@@ -25,7 +34,6 @@ const ReservationList = () => {
     <div className="main">
       <Swiper
         modules={[EffectFade, Navigation, Pagination, Scrollbar, A11y]}
-        // spaceBetween={0}
         slidesPerView={1}
         navigation
         pagination={{ clickable: true }}

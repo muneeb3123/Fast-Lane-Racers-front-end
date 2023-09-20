@@ -27,8 +27,13 @@ const allCarsSlice = createSlice({
       ...state,
       allCarsArray: state.allCarsArray.filter((car) => car.id !== action.payload),
     }));
+    builder.addCase(fetchAllCars.pending, (state) => ({
+      ...state,
+      isLoadingAllCarsArray: true,
+    }));
     builder.addCase(fetchAllCars.fulfilled, (state, action) => ({
       ...state,
+      isLoadingAllCarsArray: false,
       allCarsArray: action.payload,
     }));
   },
