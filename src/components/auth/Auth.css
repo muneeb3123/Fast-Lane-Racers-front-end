@@ -1,3 +1,7 @@
+* {
+  font-family: nasa;
+}
+
 .login-main {
   display: grid;
   background-color: #1F1F1F;
@@ -31,7 +35,7 @@
 .form-container input[type="password"],
 .form-container input[type="text"],
 .form-container input[type="number"] {
-  padding:25px 17px;
+  padding: 25px 17px;
   margin: 10px 0;
   border: 1px solid #ccc;
   color: #fff;
@@ -93,66 +97,66 @@ input::placeholder {
 
 @media (max-width: 767px) {
   .login-main {
-      grid-template-rows: 1fr 2fr;
-      padding: 60px 20px;
-    }
+    grid-template-rows: 1fr 2fr;
+    padding: 60px 20px;
+  }
 
-    .form-wrapper {
-      margin-top: 30px;
-    }
+  .form-wrapper {
+    margin-top: 30px;
+  }
 
-    @media (min-width: 480px) {
-      .login-main {
-          padding: 60px;
-        }
+  @media (min-width: 480px) {
+    .login-main {
+      padding: 60px;
     }
-  
+  }
+
 }
 
 @media (min-width: 768px) {
-  
-.login-main {
-  grid-template-columns: 1fr 1fr;
-}
 
-.login-background {
-  background-size: 138% 100%;
-  filter: brightness(1.5);
-}
+  .login-main {
+    grid-template-columns: 1fr 1fr;
+  }
 
-.form-container {
-  padding: 60px;
-}
+  .login-background {
+    background-size: 138% 100%;
+    filter: brightness(1.5);
+  }
 
-.form-wrapper {
-  justify-content: center;
-}
+  .form-container {
+    padding: 60px;
+  }
 
-.inf-wrap h4 {
-  font-size: 1.8rem;
-}
+  .form-wrapper {
+    justify-content: center;
+  }
+
+  .inf-wrap h4 {
+    font-size: 1.8rem;
+  }
 
 
-.form-logo {
-  display: block;
-  font-family: ferro;
-  font-size: 2rem;
-}
+  .form-logo {
+    display: block;
+    font-family: ferro;
+    font-size: 2rem;
+  }
 
 }
 
 @media (min-width: 1300px) {
   .login-background {
-      background-size: 100% 100%;
-    }
+    background-size: 100% 100%;
+  }
 
-    .login-title {
-      font-size: 2.2rem;
-    }
+  .login-title {
+    font-size: 2.2rem;
+  }
 }
 
 @media (min-width: 1800px) {
   .form-container {
-      padding-left: 6rem;
+    padding-left: 6rem;
   }
 }
