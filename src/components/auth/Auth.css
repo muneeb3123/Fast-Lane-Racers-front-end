@@ -104,25 +104,29 @@ input::placeholder {
 
 @keyframes loading {
   0% {
-    content: ''; 
+    content: '';
   }
-  20%  {
-    content: '.'
+
+  20% {
+    content: '.';
   }
+
   40% {
     content: '..';
   }
+
   60% {
     content: '...';
   }
+
   80% {
     content: '....';
   }
+
   100% {
     content: '';
   }
 }
-
 
 @media (max-width: 767px) {
   .login-main {
