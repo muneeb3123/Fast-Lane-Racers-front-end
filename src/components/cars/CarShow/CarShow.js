@@ -51,7 +51,7 @@ const data = {
   }],
 };
 
-const CarShow =() => {
+const CarShow = () => {
   const dispatch = useDispatch();
   const location = useLocation();
 
@@ -125,6 +125,6 @@ const CarShow =() => {
       ))}
     </>
   );
-}
+};
 
 export default CarShow;
