@@ -23,7 +23,7 @@ const Home = () => (
       modules={[Pagination, Navigation, A11y, Autoplay, EffectFade]}
       slidesPerView={1}
       pagination={{ clickable: true }}
-        // autoplay={{ delay: 2000, disableOnInteraction: false }}
+      autoplay={{ delay: 2000, disableOnInteraction: false }}
       effect="fade"
       loop
       allowTouchMove={false}
