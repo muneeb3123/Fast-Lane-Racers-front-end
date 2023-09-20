@@ -1,10 +1,10 @@
 * {
-  font-family: nasa;
+  font-family: 'nasa', sans-serif;
 }
 
 .login-main {
   display: grid;
-  background-color: #1F1F1F;
+  background-color: #1f1f1f;
   height: 100vh;
 }
 
@@ -65,16 +65,16 @@
   background-color: #fff;
 }
 
-input[type="password"] {
+.form-container input[type="password"] {
   margin-bottom: 30px;
 }
 
 input::placeholder {
-  color: #D1D6DC;
+  color: #d1d6dc;
 }
 
 .form-container button[type="submit"] {
-  background-color: #ED1C24;
+  background-color: #ed1c24;
   color: #fff;
   padding: 20px 14px;
   border: none;
@@ -110,11 +110,9 @@ input::placeholder {
       padding: 60px;
     }
   }
-
 }
 
 @media (min-width: 768px) {
-
   .login-main {
     grid-template-columns: 1fr 1fr;
   }
@@ -136,13 +134,11 @@ input::placeholder {
     font-size: 1.8rem;
   }
 
-
   .form-logo {
     display: block;
-    font-family: ferro;
+    font-family: 'ferro', sans-serif;
     font-size: 2rem;
   }
-
 }
 
 @media (min-width: 1300px) {
