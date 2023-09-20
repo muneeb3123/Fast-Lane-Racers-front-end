@@ -32,7 +32,7 @@ export default function CarsIndex() {
 
   return (
     <Swiper
-      className="swiper-container container-index"
+      className="container-index"
       modules={[EffectFade, Navigation, Pagination, Scrollbar, A11y]}
       // spaceBetween={0}
       slidesPerView={1}
