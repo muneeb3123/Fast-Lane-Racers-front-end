@@ -168,8 +168,7 @@ To run the project, execute the following command:
 To run tests, run the following command:
 
 ```sh
-  Backend:-  rspec
-  Frontend:- npm test
+  Backend:  rspec
 ```
 
 ### Deployment
@@ -257,6 +256,6 @@ I would like to acknowledge:
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./License) licensed.
+This project is [MIT](https://github.com/muneeb3123/Fast-Lane-Racers-front-end/blob/dev/LICENSE.md) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
