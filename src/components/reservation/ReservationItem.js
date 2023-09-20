@@ -1,57 +1,47 @@
 import PropTypes from 'prop-types';
 // import { useDispatch } from 'react-redux';
 // import { deleteBook } from '../redux/books/booksSlice';
+import { SwiperSlide } from 'swiper/react';
 
 function ReservationItem({ reservation }) {
   // const dispatch = useDispatch();
   return (
-    <div className="">
-      <div className="">
-        <div>
-          <div className="">
-            {reservation.car.name}
-          </div>
-          <div className="">
-            {reservation.car.description}
-          </div>
-          <div className="">
-            {reservation.car.finance_fee}
-          </div>
-          <div className="">
-            {reservation.car.option_to_purchase_fee}
-          </div>
-          <div className="">
-            {reservation.car.apr}
-          </div>
-          <div className="">
-            {reservation.car.duration}
-          </div>
-          <div>
-            <h3>Booking</h3>
-            <div className="">
-              {reservation.city}
+    <SwiperSlide>
+      <div className="d-flex reserve">
+        <div className="w-100">
+          <div className="res-detail">
+            <div className="d-flex spc-btw">
+              <p>Model:</p>
+              <p>{reservation.car.name}</p>
             </div>
-            <div className="">
-              {reservation.date}
+            <div className="d-flex spc-btw">
+              <p>City:</p>
+              <p>{reservation.city}</p>
+            </div>
+            <div className="d-flex spc-btw">
+              <p>Date:</p>
+              <p>{reservation.date}</p>
             </div>
           </div>
         </div>
         <div className="">
-          <button type="button" className="">
-            Update Reservation
-          </button>
+          <div className="d-res-image w-100">
+            <img src={reservation.car.image} className="r-image" alt="img" />
+          </div>
+        </div>
+        <div className="d-flex w-100 h-center">
           <button
             // onClick={() => {
             //   dispatch(deletereservation(reservation.item_id));
             // }}
             type="button"
-            className="text-blue btn-action line pd-l10 pointer"
+            className="btn-cancel"
           >
             Cancel
           </button>
         </div>
       </div>
-    </div>
+    </SwiperSlide>
   );
 }
 
