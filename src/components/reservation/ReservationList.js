@@ -24,7 +24,7 @@ const ReservationList = () => {
     if (!isUser) {
       navigate('/login');
     }
-  }, [isUser]);
+  }, [isUser, navigate]);
 
   useEffect(() => {
     dispatch(getReservation());
