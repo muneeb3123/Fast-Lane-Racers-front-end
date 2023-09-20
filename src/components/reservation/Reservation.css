@@ -1,0 +1,113 @@
+/* ---------------- */
+.res-form-section,
+.res-form {
+  width: 40%;
+}
+
+.res-form {
+  margin-top: 1rem;
+}
+
+.res-form-title {
+  font-size: 2rem;
+}
+
+.res-form-description {
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+}
+
+.res-form-title,
+.res-form-description {
+  text-align: center;
+  padding: 0.85rem 0.2rem;
+}
+
+.btn-reserve,
+.btn-cancel {
+  color: #fff;
+  cursor: pointer;
+  background-color: var(--color2);
+}
+
+.btn-reserve {
+  font-size: 1rem;
+}
+
+.btn-cancel {
+  font-size: 0.928rem;
+  width: 50%;
+  text-align: center;
+}
+
+.reservation {
+  display: grid;
+  place-items: center;
+  margin-top: 10%;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.spc-btw {
+  justify-content: space-between;
+}
+
+.h-center {
+  justify-content: center;
+}
+
+.reserve {
+  flex-direction: column;
+  margin: 5%;
+  align-items: center;
+}
+
+.res-detail {
+  margin-bottom: 0.8rem;
+  /* border: 1px solid #ccc; */
+  border-radius: 8px;
+  padding: 12px 16px;
+  box-shadow: 2px 2px 2px 2px #ccc;
+}
+
+.d-res-image {
+  width: 300px;
+  height: 200px;
+}
+
+.r-image {
+  width: 300px;
+  height: 200px;
+  border-radius: 50%;
+  justify-content: center;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+/* Input fields */
+.res-form input[type='text'],
+.res-form input[type='date'],
+.btn-reserve,
+.btn-cancel {
+  margin: 0.6rem 0;
+  padding: 1rem;
+  border-radius: 3rem;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+
+  .res-form-section,
+  .res-form {
+    width: 70%;
+  }
+
+  .reservation {
+    margin-top: 15%;
+  }
+}
