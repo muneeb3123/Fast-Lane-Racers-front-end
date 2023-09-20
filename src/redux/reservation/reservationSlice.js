@@ -42,11 +42,32 @@ export const addReservation = createAsyncThunk(
   },
 );
 
+export const delReservation = createAsyncThunk(
+  'reservations/delReservation',
+  async (delApiUrl, thunkAPI) => {
+    const token = localStorage.getItem('token');
+    const headers = {
+      Authorization: `${token}`,
+    };
+    try {
+      const res = await axios.post(delApiUrl, {
+        headers,
+      });
+      toast.success(res.data.response);
+      return res.data.response;
+    } catch (error) {
+      toast.error(error);
+      return thunkAPI.rejectWithValue('Unable to get data');
+    }
+  },
+);
+
 const reservationSlice = createSlice({
   name: 'reservations',
   initialState: {
     reservationList: [],
     addReservationMsg: null,
+    delReservationMsg: null,
   },
   reducers: {},
   extraReducers: (builder) => {
@@ -56,6 +77,9 @@ const reservationSlice = createSlice({
       })
       .addCase(addReservation.fulfilled, (state, action) => {
         state.addReservationMsg = action.payload;
+      })
+      .addCase(delReservation.fulfilled, (state, action) => {
+        state.delReservationMsg = action.payload;
       });
   },
 });
