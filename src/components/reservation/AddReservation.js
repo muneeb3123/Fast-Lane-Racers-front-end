@@ -1,14 +1,16 @@
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams, useNavigate } from 'react-router-dom';
 import './Reservation.css';
 import { addReservation } from '../../redux/reservation/reservationSlice';
 
 const AddReservation = () => {
   const [city, setCity] = useState('');
   const [date, setDate] = useState('');
+  const navigate = useNavigate();
   const carId = useParams();
   const dispatch = useDispatch();
+  const { isUser } = useSelector((state) => state.currentUser);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,6 +23,12 @@ const AddReservation = () => {
     setCity('');
     setDate('');
   };
+
+  useEffect(() => {
+    if (!isUser) {
+      navigate('/login');
+    }
+  }, [isUser]);
 
   return (
     <div className="test">
