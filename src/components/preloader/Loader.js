@@ -1,7 +1,7 @@
 import React from 'react';
 import './Loader.css';
 
-function Loader() {
+const Loader = () => {
   return (
     <div>
       <ul className="loader">

@@ -25,14 +25,6 @@ const ReservationItem = ({ reservation }) => (
           <img src={reservation.car.image} className="r-image" alt="img" />
         </div>
       </div>
-      <div className="d-flex w-100 h-center">
-        <button
-          type="button"
-          className="btn-cancel"
-        >
-          Cancel
-        </button>
-      </div>
     </div>
   </SwiperSlide>
 );
