@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
@@ -6,11 +5,12 @@ import { toast } from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { currentUser } from '../../redux/auth/currentUserSlice';
 import './Auth.css';
+import { SignUpUser } from '../../redux/auth/registerSlice';
 
 const SignUp = () => {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
-  const [error, setError] = useState('');
+  const { error, isLoading } = useSelector((store) => store.signupUser);
   const [passwordConfirmation, setPasswordConfirmation] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
@@ -31,16 +31,17 @@ const SignUp = () => {
       password,
       password_confirmation: passwordConfirmation,
     };
-    try {
-      const response = await axios.post('http://127.0.0.1:3000/signup', {
-        user: formData,
+    dispatch(SignUpUser(formData))
+      .then((response) => {
+        if (response.payload) {
+          toast.success(response.payload.message);
+          dispatch(currentUser());
+        } else if (response.error) {
+          setPassword('');
+          setPasswordConfirmation('');
+          setEmail('');
+        }
       });
-      toast.success(response.data.message);
-      localStorage.setItem('token', response.headers.authorization);
-      dispatch(currentUser());
-    } catch (error) {
-      setError(error.response.data.errors);
-    }
   };
 
   return (
@@ -62,7 +63,7 @@ const SignUp = () => {
             <input type="password" minLength="6" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required="true" />
             <input type="password" placeholder="Password Confirmation" value={passwordConfirmation} minLength="6" onChange={(e) => setPasswordConfirmation(e.target.value)} required="true" />
             <p className="invalid-credentials" style={{ color: 'red' }}>{error}</p>
-            <button type="submit">SignUp</button>
+            <button className={isLoading ? 'loading-button' : ''} type="submit">SignUp</button>
           </form>
           <div className="login-bottom">
             <p className="bottom-info" style={{ color: '#fff' }}>Already have an account?</p>

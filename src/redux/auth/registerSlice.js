@@ -1,16 +1,16 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-export const loginUser = createAsyncThunk('login/fetch', async (formData) => {
+export const SignUpUser = createAsyncThunk('signup/fetch', async (formData) => {
   try {
-    const response = await axios.post('http://127.0.0.1:3000/login', {
+    const response = await axios.post('http://127.0.0.1:3000/signup', {
       user: formData,
     });
     localStorage.setItem('token', response.headers.authorization);
     return response.data;
   } catch (error) {
     if (error.response) {
-      throw error.response.data.message;
+      throw error.response.data.errors[0];
     } else {
       return null;
     }
@@ -23,22 +23,22 @@ const initialState = {
   error: null,
 };
 
-const loginUserSlice = createSlice({
-  name: 'login',
+const signupSlice = createSlice({
+  name: 'signup',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(loginUser.pending, (state) => ({
+      .addCase(SignUpUser.pending, (state) => ({
         ...state,
         isLoading: true,
       }))
-      .addCase(loginUser.fulfilled, (state, action) => ({
+      .addCase(SignUpUser.fulfilled, (state, action) => ({
         ...state,
         message: action.payload,
         isLoading: action.payload === null,
       }))
-      .addCase(loginUser.rejected, (state, action) => ({
+      .addCase(SignUpUser.rejected, (state, action) => ({
         ...state,
         isLoading: false,
         error: action.error.message,
@@ -46,4 +46,4 @@ const loginUserSlice = createSlice({
   },
 });
 
-export default loginUserSlice.reducer;
+export default signupSlice.reducer;

@@ -4,7 +4,6 @@ import {
   useLocation,
   useNavigate,
 } from 'react-router-dom';
-// import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-hot-toast';
 import { logOut } from '../../redux/auth/logoutSlice';
@@ -28,7 +27,7 @@ const Layout = () => {
   };
 
   const isHome = location.pathname === '/' || location.pathname === '/login' || location.pathname === '/signup';
-  const { isUser } = useSelector((state) => state.currentUser);
+  const { isUser, user } = useSelector((state) => state.currentUser);
   const handleClickLogout = (e) => {
     e.preventDefault();
     dispatch(logOut()).then((result) => {
@@ -59,8 +58,12 @@ const Layout = () => {
             <li className="menu-item"><Link to="/">MODELS</Link></li>
             <li className="menu-item"><Link to="/cars">CARS</Link></li>
             <li className="menu-item"><Link to="/my-reservations">MY RESERVATIONS</Link></li>
-            <li className="menu-item"><Link to="/add_new_car">ADD A CAR</Link></li>
-            <li className="menu-item"><Link to="/removecar">REMOVE A CAR</Link></li>
+            { isUser && user.role === 'admin' ? (
+              <>
+                <li className="menu-item"><Link to="/add_new_car">ADD A CAR</Link></li>
+                <li className="menu-item"><Link to="/removecar">REMOVE A CAR</Link></li>
+              </>
+            ) : (null)}
             {
               isUser
                 ? <li className="menu-item"><button type="button" className="logout" onClick={handleClickLogout}>LOGOUT</button></li>

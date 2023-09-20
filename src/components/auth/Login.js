@@ -13,7 +13,7 @@ const Login = () => {
   const { isUser } = useSelector((state) => state.currentUser);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { error } = useSelector((store) => store.loginUser);
+  const { error, isLoading } = useSelector((store) => store.loginUser);
 
   useEffect(() => {
     if (isUser) {
@@ -32,7 +32,7 @@ const Login = () => {
         if (response.payload) {
           toast.success(response.payload.message);
           dispatch(currentUser());
-        } else {
+        } else if (response.error) {
           setPassword('');
         }
       });
@@ -55,7 +55,7 @@ const Login = () => {
             <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required="true" />
             <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required="true" />
             <p className="invalid-credentials" style={{ color: 'red' }}>{error}</p>
-            <button type="submit">Login</button>
+            <button className={isLoading ? 'loading-button' : ''} type="submit">Login</button>
           </form>
           <div className="login-bottom">
             <p className="bottom-info" style={{ color: '#fff' }}>Dont have an account?</p>

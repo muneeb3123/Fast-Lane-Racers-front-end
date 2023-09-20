@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-hot-toast';
 import { createNewCar } from '../../../redux/cars/AddNewCarSlice';
 import './AddNewCar.css';
 
 const AddNewCar = () => {
+  const { isUser, user } = useSelector((state) => state.currentUser);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -31,7 +33,6 @@ const AddNewCar = () => {
         }
       })
       .catch((error) => {
-        // Handle error, e.g., show an error message
         console.log('Error adding new car:', error);
       });
   };
@@ -43,6 +44,18 @@ const AddNewCar = () => {
       [name]: value,
     }));
   };
+
+  useEffect(() => {
+    if (isUser) {
+      if (user.role !== 'admin') {
+        navigate('/cars');
+        toast.error('You are not a admin');
+      }
+    } else {
+      navigate('/cars');
+      toast.error('You are not Login');
+    }
+  }, [isUser]);
 
   return (
     <section className="add-new-car-page">

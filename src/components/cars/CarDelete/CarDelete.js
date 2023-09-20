@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-hot-toast';
 import {
   EffectFade,
   Navigation,
@@ -13,10 +15,24 @@ import CardDelete from './CardDelete';
 
 const CarDelete = () => {
   const dispatch = useDispatch();
+  const { isUser, user } = useSelector((state) => state.currentUser);
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(fetchAllCars());
   }, [dispatch]);
+
+  useEffect(() => {
+    if (isUser) {
+      if (user.role !== 'admin') {
+        navigate('/cars');
+        toast.error('You are not a admin');
+      }
+    } else {
+      navigate('/cars');
+      toast.error('You are not Login');
+    }
+  }, [isUser]);
 
   const displayAllCarsArray = useSelector((store) => (store.allCarsReducer.allCarsArray));
 

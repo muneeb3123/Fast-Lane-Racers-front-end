@@ -31,16 +31,12 @@ const currentUserSlice = createSlice({
     builder
       .addCase(currentUser.pending, (state) => ({
         ...state,
-        user: null,
-        isUser: false,
         isLoading: true,
-        error: null,
       }))
       .addCase(currentUser.fulfilled, (state, action) => ({
         ...state,
         user: action.payload,
         isUser: true,
-        error: null,
         isLoading: false,
       }))
       .addCase(currentUser.rejected, (state, action) => ({

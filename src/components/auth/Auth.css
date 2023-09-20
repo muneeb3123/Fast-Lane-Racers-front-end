@@ -95,6 +95,35 @@ input::placeholder {
   display: none;
 }
 
+.loading-button::after {
+  content: '';
+  display: inline-block;
+  font-size: 24px;
+  animation: loading 2s infinite;
+}
+
+@keyframes loading {
+  0% {
+    content: ''; 
+  }
+  20%  {
+    content: '.'
+  }
+  40% {
+    content: '..';
+  }
+  60% {
+    content: '...';
+  }
+  80% {
+    content: '....';
+  }
+  100% {
+    content: '';
+  }
+}
+
+
 @media (max-width: 767px) {
   .login-main {
     grid-template-rows: 1fr 2fr;
