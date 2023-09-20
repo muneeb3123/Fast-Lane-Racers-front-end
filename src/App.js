@@ -15,7 +15,7 @@ import AddReservation from './components/reservation/AddReservation';
 import ReservationList from './components/reservation/ReservationList';
 import CarDelete from './components/cars/CarDelete/CarDelete';
 
-function App() {
+const App = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(currentUser());
@@ -39,6 +39,6 @@ function App() {
       </Routes>
     </BrowserRouter>
   );
-}
+};
 
 export default App;
