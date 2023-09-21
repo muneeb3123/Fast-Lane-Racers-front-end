@@ -1,0 +1,189 @@
+.car-show-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+  min-height: 100vh;
+  margin-right: 20px;
+  padding: 10px;
+  width: 100%;
+}
+
+.car-image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  min-height: 80vh;
+  place-items: center;
+  width: 60%;
+}
+
+.car-image {
+  border-radius: 50%;
+  width: 90%;
+}
+
+.car-details-container {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.car-name-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.car-name {
+  font-size: 2rem;
+}
+
+.car-details-reserve {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.purchase-details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.finance-fee-container,
+.option-to-purchase-fee-container,
+.total-amount-payable-container,
+.duration-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 1rem;
+  line-height: 20px;
+  padding: 10px 20px;
+}
+
+.finance-fee-container,
+.total-amount-payable-container {
+  background-color: #e2e3e5;
+}
+
+.rigth-side-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.apr-percentage-container {
+  font-size: 1.5rem;
+}
+
+.doughnut-chart-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  height: 10rem;
+  width: 10rem;
+}
+
+.reserve-btn-container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.reserve-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-family: 'nasa', sans-serif;
+  font-size: 1.3rem;
+  border-radius: 25px;
+  cursor: pointer;
+  background-color: #96bc4a;
+  color: white;
+  padding: 8px 20px;
+  border: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.reserve-btn:hover {
+  transform: scale(1.1);
+}
+
+.rowr {
+  width: 28px;
+  height: 28px;
+}
+
+@media (max-width: 768px) {
+  .car-show-container {
+    flex-direction: column;
+    min-height: auto;
+    gap: 0.5rem;
+  }
+
+  .car-image-container {
+    min-height: auto;
+    width: 100%;
+  }
+
+  .car-image {
+    width: 20rem;
+  }
+
+  .car-details-container {
+    align-items: center;
+    max-width: none;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .car-name-container {
+    align-items: center;
+  }
+
+  .car-details-reserve {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .rigth-side-container {
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 590px) {
+  .car-details-reserve {
+    flex-direction: column;
+  }
+
+  .purchase-details-container {
+    width: 100%;
+  }
+
+  .rigth-side-container {
+    width: 100%;
+  }
+}

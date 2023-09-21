@@ -1,38 +1,55 @@
-.App {
+:root {
+  --color1: #d1eae7;
+  --color2: #5973b5;
+  --color3: #efefef;
+  --color4: #b17373;
+  --color5: #45a453;
+  --color6: #927842;
+}
+
+@font-face {
+  font-family: 'racer';
+  src: url(./assets/fonts/racer.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'nasa';
+  src: url(./assets/fonts/nasa.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'ferro';
+  src: url(./assets/fonts/FerroRosso.woff2) format('woff2');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'racer', sans-serif;
+  font-size: 16px;
+  font-weight: 200;
+}
+
+/* Error message styles */
+.toast-error {
+  background-color: #ff6b6b;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 20px;
   text-align: center;
+  font-weight: bold;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Success message styles */
+.toast-success {
+  background-color: #66bb6a;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-align: center;
+  font-weight: bold;
 }

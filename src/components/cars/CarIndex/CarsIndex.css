@@ -1,0 +1,175 @@
+.car-page {
+  display: grid;
+  grid-template-columns: 10% 90%;
+}
+
+.left-part {
+  box-shadow: 0 0 0.62em rgba(0, 0, 0, 0.3);
+  background-color: #eaf3eb;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 4em;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.937em;
+}
+
+.circle-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 11.25rem;
+  height: 11.25rem;
+  border-radius: 50%;
+  position: relative;
+}
+
+.image-over {
+  width: 21.87rem;
+  height: auto;
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.container-index {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  align-items: center;
+}
+
+.no-car {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  font-size: 1.5rem;
+  color: #a09e9efa;
+}
+
+.line-doted {
+  border: none;
+  width: 60%;
+  height: 2px;
+  background-image: linear-gradient(90deg, #dbd6d6 50%, transparent 50%);
+  background-size: 10px 2px;
+  background-repeat: repeat-x;
+  margin: 10px 0;
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.62em;
+}
+
+.social-icon {
+  cursor: pointer;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+}
+
+.swiper-button-prev {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+}
+
+.swiper-button-next {
+  position: absolute;
+  top: 50%;
+  right: 0%;
+}
+
+.swiper-button-next::after {
+  padding: 15px 25px;
+  background-color: #98bf11;
+  border-radius: 40% 0 0 40%;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.swiper-button-prev::after {
+  padding: 15px 25px;
+  background-color: #98bf11;
+  border-radius: 0 40% 40% 0;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.header {
+  position: absolute;
+  left: 48%;
+  top: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.62em;
+}
+
+.header h1 {
+  font-size: 3.5rem;
+}
+
+.header p {
+  margin-bottom: 0.62em;
+}
+
+.car-description {
+  text-align: center;
+  overflow-wrap: break-word;
+  width: 70%;
+}
+
+.slot-start {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 6rem;
+  margin-top: 1rem;
+}
+
+.index-title {
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    font-size: 12px;
+  }
+
+  .no-reservation {
+    font-size: 1rem;
+  }
+
+  .image-over {
+    width: 20rem;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+  }
+
+  .slot-start {
+    margin-bottom: 3rem;
+  }
+
+  .circle-image {
+    width: 10rem;
+    height: 10rem;
+  }
+}
