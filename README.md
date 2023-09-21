@@ -90,7 +90,7 @@ Initial Kanban board
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo]()
+- [Live Demo](https://shiny-longma-bba6fb.netlify.app)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
