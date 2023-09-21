@@ -20,6 +20,7 @@
     - [Usage](#usage)
     - [Run tests](#run-tests)
     - [Deployment](#deployment)
+  - [Authors ](#-authors-)
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
   - [⭐️ Show your support ](#️-show-your-support-)
@@ -68,6 +69,7 @@ Initial Kanban board
 
 [Final Kanban Board](https://github.com/users/muneeb3123/projects/4/views/1)
 
+The final number of team members is 5. View the details of team members [here](#-authors-)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -90,7 +92,7 @@ Initial Kanban board
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo]()
+- [Live Demo](https://shiny-longma-bba6fb.netlify.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -187,6 +189,8 @@ You can deploy this project using:
 Render or any other platform.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Authors <a name="authors"></a>
 
 👤 **Muneeb-ur-Rehman**
 
