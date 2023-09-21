@@ -56,8 +56,12 @@
   height: 100vh;
   display: grid;
   place-items: center;
+}
+
+.no-car p {
   font-size: 1.5rem;
   color: #a09e9efa;
+  border-bottom: 1px solid #a09e9efa;
 }
 
 .line-doted {

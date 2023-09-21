@@ -65,7 +65,9 @@ const CarDelete = () => {
           </div>
         ))
       ) : (
-        <div>No cars to display</div>
+        <div className="no-car">
+          <p>No cars to display</p>
+        </div>
       )}
       <section slot="container-start" className="slot-start">
         <h1 className="index-title">List of Cars</h1>

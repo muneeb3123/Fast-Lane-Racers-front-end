@@ -59,17 +59,17 @@
 }
 
 .main .swiper-pagination-fraction,
-  .main .swiper-pagination-custom,
-  .main .swiper-horizontal > .main .swiper-pagination-bullets,
-  .main .swiper-pagination-bullets.swiper-pagination-horizontal {
-    bottom: 40% !important;
-    left: auto !important;
-    right: 20% !important;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 7px !important;
-    width: 0;
-  }
+.main .swiper-pagination-custom,
+.main .swiper-horizontal > .main .swiper-pagination-bullets,
+.main .swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: 40% !important;
+  left: auto !important;
+  right: 20% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 7px !important;
+  width: 0;
+}
 
 .spc-btw {
   justify-content: space-between;
