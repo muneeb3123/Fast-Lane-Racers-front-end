@@ -59,6 +59,18 @@ Fast-Lane-Racer provides a seamless and reliable car booking experience.
   </ul>
 </details>
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Kanban Board <a name="kanban-board"></a>
+
+Initial Kanban board
+<img src='./public/images/Kanban-board.PNG'>
+
+[Final Kanban Board](https://github.com/users/muneeb3123/projects/4/views/1)
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ### Key Features <a name="key-features"></a>
 
 - Only Admin can add or delete Cars from the website.
