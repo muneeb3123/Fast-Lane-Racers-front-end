@@ -44,13 +44,14 @@ export const addReservation = createAsyncThunk(
 
 export const delReservation = createAsyncThunk(
   'reservations/delReservation',
-  async (delApiUrl, thunkAPI) => {
+  async (id, thunkAPI) => {
     const token = localStorage.getItem('token');
+    const url = `${apiUrl}/${id}`;
     const headers = {
       Authorization: `${token}`,
     };
     try {
-      const res = await axios.delete(delApiUrl, {
+      const res = await axios.delete(url, {
         headers,
       });
       toast.success(res.data.response);
