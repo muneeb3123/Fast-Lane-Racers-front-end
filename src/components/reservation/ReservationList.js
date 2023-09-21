@@ -8,7 +8,10 @@ import {
   Scrollbar,
   A11y,
 } from 'swiper/modules';
-import { getReservation } from '../../redux/reservation/reservationSlice';
+import {
+  getReservation,
+  delReservation,
+} from '../../redux/reservation/reservationSlice';
 import ReservationItem from './ReservationItem';
 
 const ReservationList = () => {
@@ -20,6 +23,7 @@ const ReservationList = () => {
   );
 
   const hasReservation = reservation.length > 0;
+  const apiUrl = 'http://127.0.0.1:3000/reservations';
 
   useEffect(() => {
     if (!isUser) {
@@ -31,6 +35,12 @@ const ReservationList = () => {
     dispatch(getReservation());
   }, [dispatch]);
 
+  const handleDelete = (id) => {
+    const url = `${apiUrl}/${id}`;
+    dispatch(delReservation(url));
+    console.log(id);
+  };
+
   return (
     <div className="main">
       <Swiper
@@ -40,8 +50,12 @@ const ReservationList = () => {
       >
         {hasReservation ? (
           reservation.map((reservation) => (
-            <SwiperSlide key={reservation.id}>
-              <ReservationItem reservation={reservation} />
+            <SwiperSlide
+              key={reservation.id}>
+              <ReservationItem
+              reservation={reservation}
+              handleDelete={handleDelete}
+            />
             </SwiperSlide>
           ))
         ) : (
