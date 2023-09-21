@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { Swiper } from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import {
   EffectFade,
-  Navigation,
   Pagination,
   Scrollbar,
   A11y,
@@ -20,6 +19,8 @@ const ReservationList = () => {
     (state) => state.reservations.reservationList,
   );
 
+  const hasReservation = reservation.length > 0;
+
   useEffect(() => {
     if (!isUser) {
       navigate('/login');
@@ -33,16 +34,19 @@ const ReservationList = () => {
   return (
     <div className="main">
       <Swiper
-        modules={[EffectFade, Navigation, Pagination, Scrollbar, A11y]}
+        modules={[EffectFade, Pagination, Scrollbar, A11y]}
         slidesPerView={1}
-        navigation
         pagination={{ clickable: true }}
       >
-        <>
-          {reservation.map((reservation) => (
-            <ReservationItem key={reservation.id} reservation={reservation} />
-          ))}
-        </>
+        {hasReservation ? (
+          reservation.map((reservation) => (
+            <SwiperSlide key={reservation.id}>
+              <ReservationItem reservation={reservation} />
+            </SwiperSlide>
+          ))
+        ) : (
+          <div className="no-reservation">There are no reservations</div>
+        )}
       </Swiper>
     </div>
   );

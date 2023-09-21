@@ -38,6 +38,7 @@ input::-webkit-inner-spin-button {
 }
 
 .add-new-car-form input[type="email"],
+select#color,
 .add-new-car-form input[type="password"],
 .add-new-car-form input[type="text"],
 .add-new-car-form input[type="number"] {
@@ -46,6 +47,11 @@ input::-webkit-inner-spin-button {
   border-radius: 5px;
   border: 1px solid #ccc;
   width: 100%;
+}
+
+select#color {
+  background-color: #fff;
+  color: #8685854f;
 }
 
 .add-new-car-form button[type="submit"] {

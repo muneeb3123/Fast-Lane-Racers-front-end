@@ -51,6 +51,15 @@
   align-items: center;
 }
 
+.no-car {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  font-size: 1.5rem;
+  color: #a09e9efa;
+}
+
 .line-doted {
   border: none;
   width: 60%;
@@ -144,6 +153,10 @@
 @media screen and (max-width: 500px) {
   body {
     font-size: 12px;
+  }
+
+  .no-reservation {
+    font-size: 1rem;
   }
 
   .image-over {

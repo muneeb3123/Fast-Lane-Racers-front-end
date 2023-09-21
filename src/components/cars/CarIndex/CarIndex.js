@@ -44,7 +44,7 @@ const CarsIndex = () => {
           {hasCars ? (
             allCarsArray.map((car) => (
               <div key={car.id}>
-                <SwiperSlide>
+                <SwiperSlide key={car.id}>
                   <CarCard
                     name={car.name}
                     description={car.description}
@@ -56,7 +56,7 @@ const CarsIndex = () => {
               </div>
             ))
           ) : (
-            <p>No cars found</p>
+            <div className="no-car">No cars found</div>
           )}
           <section slot="container-start" className="slot-start">
             <h1 className="index-title">Latest models</h1>

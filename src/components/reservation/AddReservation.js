@@ -22,13 +22,14 @@ const AddReservation = () => {
     dispatch(addReservation(reservation));
     setCity('');
     setDate('');
+    navigate('/cars');
   };
 
   useEffect(() => {
     if (!isUser) {
       navigate('/login');
     }
-  }, [isUser]);
+  }, [isUser, navigate]);
 
   return (
     <div className="test">

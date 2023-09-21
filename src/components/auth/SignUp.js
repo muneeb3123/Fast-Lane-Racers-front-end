@@ -58,10 +58,10 @@ const SignUp = () => {
         <div className="form-wrapper">
           <h1 className="login-title" style={{ color: '#fff' }}>PLEASE SignUP</h1>
           <form onSubmit={handleSubmit} className="login-form">
-            <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} required="true" />
-            <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required="true" />
-            <input type="password" minLength="6" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required="true" />
-            <input type="password" placeholder="Password Confirmation" value={passwordConfirmation} minLength="6" onChange={(e) => setPasswordConfirmation(e.target.value)} required="true" />
+            <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} required name="Name" />
+            <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required name="Email" />
+            <input type="password" minLength="6" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required name="Password" />
+            <input type="password" placeholder="Password Confirmation" value={passwordConfirmation} minLength="6" onChange={(e) => setPasswordConfirmation(e.target.value)} required name="password confirmatiom" />
             <p className="invalid-credentials" style={{ color: 'red' }}>{error}</p>
             <button className={isLoading ? 'loading-button' : ''} type="submit">SignUp</button>
           </form>

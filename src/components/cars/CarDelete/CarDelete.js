@@ -30,9 +30,9 @@ const CarDelete = () => {
       }
     } else {
       navigate('/cars');
-      toast.error('You are not Login');
+      toast.error('You are not admin');
     }
-  }, [isUser]);
+  });
 
   const displayAllCarsArray = useSelector((store) => (store.allCarsReducer.allCarsArray));
 
