@@ -94,7 +94,6 @@ The final number of team members is 5. View the details of team members [here](#
 
 - [Live Demo](https://shiny-longma-bba6fb.netlify.app)
 
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 💻 Getting Started <a name="getting-started"></a>
