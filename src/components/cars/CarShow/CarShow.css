@@ -10,7 +10,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   padding: 10px;
   place-items: center;
 }
@@ -24,7 +23,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  justify-content: center;
   gap: 0.5rem;
   max-width: 700px;
 }
@@ -196,9 +194,27 @@
 @media (min-width: 1000px) {
   .car-show-container {
     grid-template-columns: 1fr 1fr;
+    margin-top: 17%;
   }
 
   .car-image {
-    width: 80%;
+    width: 100%;
   }
+}
+
+@media (min-width: 1200px) {
+  .car-show-container {
+    grid-template-columns: 1fr 1fr;
+    margin-top: 10%;
+  }
+  
+}
+
+@media (min-width: 1600px) {
+  .car-show-container {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+    margin-top: 5%;
+  }
+  
 }
