@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const ReservationItem = ({ reservation }) => (
+const ReservationItem = ({ reservation, handleDelete }) => (
   <div className="d-flex reserve">
     <div className="w-100">
       <div className="res-detail">
@@ -23,11 +23,23 @@ const ReservationItem = ({ reservation }) => (
         <img src={reservation.car.image} className="r-image" alt="img" />
       </div>
     </div>
+    <div className="d-flex w-100 h-center">
+      <button
+        onClick={() => {
+          handleDelete(reservation.id);
+        }}
+        type="button"
+        className="btn-cancel"
+      >
+        Cancel
+      </button>
+    </div>
   </div>
 );
 
 ReservationItem.propTypes = {
   reservation: PropTypes.instanceOf(Object).isRequired,
+  handleDelete: PropTypes.func.isRequired,
 };
 
 export default ReservationItem;

@@ -1,12 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {
-  EffectFade,
-  Pagination,
-  Scrollbar,
-  A11y,
+  EffectFade, Pagination, Scrollbar, A11y,
 } from 'swiper/modules';
 import {
   getReservation,
@@ -16,6 +13,7 @@ import ReservationItem from './ReservationItem';
 
 const ReservationList = () => {
   const dispatch = useDispatch();
+  const [reload, setReload] = useState(0);
   const { isUser } = useSelector((state) => state.currentUser);
   const navigate = useNavigate();
   const reservation = useSelector(
@@ -23,7 +21,6 @@ const ReservationList = () => {
   );
 
   const hasReservation = reservation.length > 0;
-  const apiUrl = 'http://127.0.0.1:3000/reservations';
 
   useEffect(() => {
     if (!isUser) {
@@ -33,16 +30,20 @@ const ReservationList = () => {
 
   useEffect(() => {
     dispatch(getReservation());
-  }, [dispatch]);
+  }, [reload, dispatch]);
 
   const handleDelete = (id) => {
-    const url = `${apiUrl}/${id}`;
-    dispatch(delReservation(url));
-    console.log(id);
+    dispatch(delReservation(id));
+    const timer = setTimeout(() => {
+      setReload((reload) => reload + 1);
+    }, 500);
+    return () => {
+      clearTimeout(timer);
+    };
   };
 
   return (
-    <div className="main">
+    <div className="reservation">
       <Swiper
         modules={[EffectFade, Pagination, Scrollbar, A11y]}
         slidesPerView={1}
@@ -50,12 +51,11 @@ const ReservationList = () => {
       >
         {hasReservation ? (
           reservation.map((reservation) => (
-            <SwiperSlide
-              key={reservation.id}>
+            <SwiperSlide key={reservation.id}>
               <ReservationItem
-              reservation={reservation}
-              handleDelete={handleDelete}
-            />
+                reservation={reservation}
+                handleDelete={handleDelete}
+              />
             </SwiperSlide>
           ))
         ) : (
