@@ -15,6 +15,7 @@ import facebook from '../../images/facebook.svg';
 import twitter from '../../images/twitter.svg';
 import vimeo from '../../images/vimeo.svg';
 import microverse from '../../images/microverse-sm.png';
+import { currentUser } from '../../redux/auth/currentUserSlice';
 
 const Layout = () => {
   const dispatch = useDispatch();
@@ -36,9 +37,9 @@ const Layout = () => {
     e.preventDefault();
     dispatch(logOut()).then((result) => {
       if (result.payload) {
+        dispatch(currentUser());
         toast.success(result.payload);
         navigate('/cars');
-        window.location.reload();
       } else {
         toast.error(result.error.message);
       }

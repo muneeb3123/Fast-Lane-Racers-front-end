@@ -1,13 +1,9 @@
 .car-show-container {
-  display: flex;
+  display: grid;
   flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 1.5rem;
-  min-height: 100vh;
-  margin-right: 20px;
-  padding: 10px;
+  padding: 2rem;
   width: 100%;
+  height: 100vh;
 }
 
 .car-image-container {
@@ -16,9 +12,7 @@
   align-items: center;
   justify-content: center;
   padding: 10px;
-  min-height: 80vh;
   place-items: center;
-  width: 60%;
 }
 
 .car-image {
@@ -27,7 +21,6 @@
 }
 
 .car-details-container {
-  width: 40%;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -97,11 +90,13 @@
 
 .doughnut-chart-container {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
   align-items: center;
-  height: 10rem;
-  width: 10rem;
+  gap: 1rem;
+}
+
+.doughnut-chart {
+  height: 10rem !important;
+  width: 10rem !important;
 }
 
 .reserve-btn-container {
@@ -139,9 +134,8 @@
 
 @media (max-width: 768px) {
   .car-show-container {
-    flex-direction: column;
-    min-height: auto;
     gap: 0.5rem;
+    grid-template-rows: 1fr 3fr;
   }
 
   .car-image-container {
@@ -160,12 +154,15 @@
     gap: 1rem;
   }
 
+  .rigth-side-container {
+    align-items: center;
+  }
+
   .car-name-container {
     align-items: center;
   }
 
   .car-details-reserve {
-    flex-direction: row;
     align-items: flex-start;
   }
 
@@ -185,5 +182,11 @@
 
   .rigth-side-container {
     width: 100%;
+  }
+}
+
+@media (min-width:768px) {
+  .car-show-container {
+    grid-template-columns: 1fr 1fr;
   }
 }
