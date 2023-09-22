@@ -32,7 +32,7 @@ const AddReservation = () => {
   }, [isUser, navigate]);
 
   return (
-    <div className="test">
+    <div className="">
       <div className="reservation">
         <div className="res-form-section">
           <h3 className="res-form-title">Test Drive</h3>

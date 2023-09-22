@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {
-  EffectFade, Pagination, Scrollbar, A11y,
+  EffectFade, Pagination, A11y,
 } from 'swiper/modules';
 import {
   getReservation,
@@ -45,9 +45,10 @@ const ReservationList = () => {
   return (
     <div className="reservation">
       <Swiper
-        modules={[EffectFade, Pagination, Scrollbar, A11y]}
+        modules={[EffectFade, Pagination, A11y]}
         slidesPerView={1}
         pagination={{ clickable: true }}
+        className="res-swiper"
       >
         {hasReservation ? (
           reservation.map((reservation) => (

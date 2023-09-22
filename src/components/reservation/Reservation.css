@@ -27,7 +27,7 @@
 .btn-cancel {
   color: #fff;
   cursor: pointer;
-  background-color: var(--color2);
+  background-color: #96bc4a;
 }
 
 .btn-reserve {
@@ -46,9 +46,12 @@
   margin-top: 10%;
 }
 
+.res-swiper {
+  width: 33.33%;
+}
+
 .d-flex {
   display: flex;
-  width: 90%;
 }
 
 .main .swiper-slide {
@@ -125,7 +128,13 @@
   padding: 1rem;
   border-radius: 3rem;
   border: 1px solid #ccc;
+  border: 1px solid #96bc4a;
   width: 100%;
+}
+
+.res-form input[type='text']:focus,
+.res-form input[type='date']:focus {
+  outline-color: #96bc4a;
 }
 
 @media screen and (max-width: 768px) {
