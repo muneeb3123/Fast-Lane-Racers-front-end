@@ -148,7 +148,7 @@ a {
   animation-duration: 0.5s;
   animation-name: slidein;
   display: flex;
-  z-index: 14;
+  z-index: 15;
   background-color: #e9e8ef;
 }
 
