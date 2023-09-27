@@ -108,15 +108,12 @@ const CarShow = () => {
                 </div>
 
                 <div className="doughnut-chart-container">
-                  <Doughnut className="doughnut-chart" data={data} />
-                </div>
-
-                <div className="reserve-btn-container">
                   <Link to={`/cars/${car.id}/add/reservation`} className="reserve-btn">
                     Reserve
                     {' '}
                     <img src={rowr} alt="row right" className="rowr" />
                   </Link>
+                  <Doughnut className="doughnut-chart" data={data} />
                 </div>
               </div>
             </div>

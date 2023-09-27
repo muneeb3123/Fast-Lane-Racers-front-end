@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { toast } from 'react-hot-toast';
 import axios from 'axios';
 
-const apiUrl = 'http://127.0.0.1:3000/reservations';
+const apiUrl = 'https://fast-lane-racers.onrender.com/reservations';
 
 export const getReservation = createAsyncThunk(
   'reservations/getReservation',

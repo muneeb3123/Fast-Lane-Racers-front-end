@@ -1,10 +1,16 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const ALL_CARS_API = 'http://127.0.0.1:3000/cars';
+const ALL_CARS_API = 'https://fast-lane-racers.onrender.com/cars';
 
 export const deleteCar = createAsyncThunk('car/deleteCar', async (id) => {
-  const response = await axios.delete(`${ALL_CARS_API}/${id}`);
+  const token = localStorage.getItem('token');
+  const response = await axios.delete(`${ALL_CARS_API}/${id}`, {
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: token,
+    },
+  });
   return response.data;
 });
 

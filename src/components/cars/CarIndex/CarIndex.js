@@ -56,7 +56,9 @@ const CarsIndex = () => {
               </div>
             ))
           ) : (
-            <div className="no-car">No cars found</div>
+            <div className="no-car">
+              <p>No cars found</p>
+            </div>
           )}
           <section slot="container-start" className="slot-start">
             <h1 className="index-title">Latest models</h1>

@@ -15,6 +15,7 @@
 
 .menu-icon {
   display: none;
+  color: black;
   position: absolute;
   top: 5px;
   left: 5px;
@@ -142,6 +143,18 @@ a {
 
 .hide-menu {
   display: none;
+}
+
+.hamburger {
+  filter: invert(100%);
+  transform: rotate(0deg);
+  transition: transform 1s;
+}
+
+.toggle-hamburger {
+  filter: none;
+  transform: rotate(360deg);
+  transition: transform 1s;
 }
 
 .activate {

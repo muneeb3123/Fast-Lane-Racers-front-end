@@ -17,7 +17,7 @@ const Login = () => {
 
   useEffect(() => {
     if (isUser) {
-      navigate('/');
+      navigate('/cars');
     }
   }, [isUser, navigate]);
 
@@ -53,7 +53,7 @@ const Login = () => {
           <h1 className="login-title" style={{ color: '#fff' }}>PLEASE LOG IN</h1>
           <form onSubmit={handleSubmit} className="login-form">
             <input name="Email" type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-            <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required name="Password" />
+            <input className="password-bottom" type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required name="Password" />
             <p className="invalid-credentials" style={{ color: 'red' }}>{error}</p>
             <button className={isLoading ? 'loading-button' : ''} type="submit">Login</button>
           </form>

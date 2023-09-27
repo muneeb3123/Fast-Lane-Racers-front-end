@@ -32,6 +32,7 @@ body {
   font-family: 'racer', sans-serif;
   font-size: 16px;
   font-weight: 200;
+  overflow: hidden;
 }
 
 /* Error message styles */

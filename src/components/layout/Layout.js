@@ -15,6 +15,7 @@ import facebook from '../../images/facebook.svg';
 import twitter from '../../images/twitter.svg';
 import vimeo from '../../images/vimeo.svg';
 import microverse from '../../images/microverse-sm.png';
+import { currentUser } from '../../redux/auth/currentUserSlice';
 
 const Layout = () => {
   const dispatch = useDispatch();
@@ -23,7 +24,11 @@ const Layout = () => {
 
   const handleClickMenu = () => {
     const btnMenu = document.querySelector('.menu');
+    const logo = document.querySelector('.hamburger');
     btnMenu.classList.toggle('activate');
+    if (logo) {
+      logo.classList.toggle('toggle-hamburger');
+    }
   };
 
   const isHome = location.pathname === '/' || location.pathname === '/login' || location.pathname === '/signup';
@@ -32,9 +37,9 @@ const Layout = () => {
     e.preventDefault();
     dispatch(logOut()).then((result) => {
       if (result.payload) {
+        dispatch(currentUser());
         toast.success(result.payload);
-        navigate('/');
-        window.location.reload();
+        navigate('/cars');
       } else {
         toast.error(result.error.message);
       }
@@ -45,17 +50,16 @@ const Layout = () => {
     <>
       <header className="mobil-icon">
         <button className={`menu-icon ${isHome ? 'show-menu-icon' : ''}`} type="button" onClick={handleClickMenu}>
-          <img src={menu} alt="mobile menu" />
+          <img src={menu} alt="mobile menu" className={` ${isHome ? 'hamburger' : ''}`} />
         </button>
       </header>
       <aside className={`menu ${isHome ? 'hide-menu' : ''}`}>
         <section className="menu-header">
-          <img src={logo} alt="logo" className="logo" />
+          <Link to="/"><img src={logo} alt="logo" className="logo" /></Link>
         </section>
         <section className="menu-user">
           <h2 className="menu-title">Racers</h2>
           <ul className="menu-container">
-            <li className="menu-item"><Link to="/">MODELS</Link></li>
             <li className="menu-item"><Link to="/cars">CARS</Link></li>
             <li className="menu-item"><Link to="/my-reservations">MY RESERVATIONS</Link></li>
             { isUser && user.role === 'admin' ? (
